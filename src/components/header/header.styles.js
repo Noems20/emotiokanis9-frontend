@@ -33,6 +33,7 @@ export const Nav = styled.nav`
   z-index: 10;
 
   @media screen and (max-width: 992px) {
+    height: 5.7rem;
     transition: all 0.8s ease;
     background-color: #fff;
   }
