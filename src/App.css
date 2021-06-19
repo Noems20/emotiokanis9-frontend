@@ -1,7 +1,11 @@
 :root {
   --color-primary: #0e79bb;
-  --color-primary-light: #1c87ca;
-  --color-primary-dark: #146ba3;
+  --color-primary-light: #1e98e4;
+  --color-primary-dark: #0064a1;
+
+  --color-secondary: #57a80b;
+  --color-secondary-light: #64c00d;
+  --color-secondary-dark: #4f970b;
 
   --color-grey-light-1: #faf9f9;
   --color-grey-light-2: #f4f2f2;
@@ -23,5 +27,35 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 62.5%; /* 1 rem = 10px*/
-  font-family: 'Righteous', sans-serif;
+  font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+@media screen and (max-width: 992px) {
+  * {
+    font-size: 57%; /* 1 rem = 10px*/
+  }
+}
+
+@media screen and (max-width: 478px) {
+  * {
+    font-size: 50%; /* 1 rem = 10px*/
+  }
+}
+
+@media screen and (max-width: 430px) {
+  * {
+    font-size: 40%; /* 1 rem = 10px*/
+  }
+}
+
+@media screen and (max-width: 342px) {
+  * {
+    font-size: 45%; /* 1 rem = 10px*/
+  }
+}
+
+@media screen and (max-width: 326px) {
+  * {
+    font-size: 37%; /* 1 rem = 10px*/
+  }
 }

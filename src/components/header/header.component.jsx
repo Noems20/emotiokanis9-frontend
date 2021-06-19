@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaBars } from 'react-icons/fa';
+import logoB from '../images/header/logoB.svg';
+import logo from '../images/header/logo.svg';
+// import logoN from '../images/header/logoN.svg';
 
 import {
   MobileIcon,
@@ -9,36 +12,50 @@ import {
   NavItem,
   NavLogo,
   NavLink,
+  SessionBtn,
 } from './header.styles';
 
 const Header = () => {
+  const [scrollNav, setScrollNav] = useState(false);
+  const [image, setImage] = useState();
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+      setImage(logo);
+    } else {
+      setScrollNav(false);
+      setImage(logoB);
+    }
+  };
+
+  useEffect(() => {
+    setImage(logoB);
+    window.addEventListener('scroll', changeNav);
+  }, []);
+
   return (
-    <Nav>
+    <Nav scrollnav={scrollNav}>
       <NavContainer>
-        <NavMenu>
-          <NavItem>
-            <NavLink>INICIO</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink>NOSOTROS</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink>SERVICIOS</NavLink>
-          </NavItem>
-        </NavMenu>
-        <NavLogo>LOGO</NavLogo>
-        <MobileIcon>
+        <NavLogo src={image} scrollnav={scrollNav} />
+        <MobileIcon scrollnav={scrollNav}>
           <FaBars />
         </MobileIcon>
         <NavMenu>
           <NavItem>
-            <NavLink>RECONOCIMIENTOS</NavLink>
+            <NavLink scrollnav={scrollNav}>INICIO</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>GALERÍA</NavLink>
+            <NavLink scrollnav={scrollNav}>NOSOTROS</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink>CONTACTO</NavLink>
+            <NavLink scrollnav={scrollNav}>SERVICIOS</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink scrollnav={scrollNav}>Contacto</NavLink>
+          </NavItem>
+          <NavItem>
+            <SessionBtn scrollnav={scrollNav}>Iniciar sesión</SessionBtn>
           </NavItem>
         </NavMenu>
       </NavContainer>

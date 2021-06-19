@@ -3,26 +3,44 @@ import { Link as LinkR } from 'react-router-dom';
 
 export const MobileIcon = styled.div`
   display: none;
+  visibility: hidden;
   position: absolute;
+  transition: all 0.2s ease-in-out;
 
   @media screen and (max-width: 992px) {
     position: static;
+    visibility: visible;
     display: block;
-    font-size: 5rem;
-    color: #000;
+    margin-top: ${({ scrollnav }) => (scrollnav ? '0' : '5rem')};
+    color: ${({ scrollnav }) => (scrollnav ? '#000' : '#fff')};
+    font-size: 50px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  @media screen and (max-width: 360px) {
+    margin-top: ${({ scrollnav }) => (scrollnav ? '0.75rem' : '4rem')};
   }
 `;
 
 export const Nav = styled.nav`
-  background-color: #fff;
+  background-color: ${({ scrollnav }) => (scrollnav ? '#fff' : 'transparent')};
+  box-shadow: ${({ scrollnav }) =>
+    scrollnav ? 'rgba(0, 0, 0, 0.24) 0px 3px 8px' : 'none'};
   background-size: cover;
-  height: 80px;
+  height: 8rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 0;
   position: sticky;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.15s ease-in-out;
+
+  z-index: 10;
+
+  @media screen and (max-width: 992px) {
+    background-color: '#fff';
+  }
 `;
 
 export const NavContainer = styled.div`
@@ -45,7 +63,7 @@ export const NavContainer = styled.div`
 `;
 
 export const NavMenu = styled.ul`
-  list-style: none;
+  color: #000;
   @media screen and (max-width: 992px) {
     display: none;
   }
@@ -58,21 +76,63 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled(LinkR)`
-  color: #000;
-  font-size: 1.7rem;
+  font-family: 'Fredoka One', sans-serif;
+  color: ${({ scrollnav }) => (scrollnav ? '#000' : '#fff')};
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 400;
   text-decoration: none;
   padding: 0 2rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 400;
 
   display: flex;
   align-self: stretch;
   align-items: center;
   width: 100%;
   &:hover {
-    background-color: var(--color-grey-light-1);
-    color: var(--color-primary-light);
+    background-color: ${({ scrollnav }) =>
+      scrollnav ? 'var(--color-grey-light-1)' : 'none'};
+    color: ${({ scrollnav }) => (scrollnav ? 'var(--color-primary)' : 'black')};
     transition: all 0.2s ease-in-out;
   }
 `;
 
-export const NavLogo = styled.h1``;
+export const SessionBtn = styled(LinkR)`
+  font-family: 'Fredoka One', sans-serif;
+  color: #fff;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 400;
+  background: ${({ scrollnav }) =>
+    scrollnav ? '#000' : 'var(--color-primary-light)'};
+  text-decoration: none;
+  padding: 0.8rem 2rem;
+  margin-left: 1.2rem;
+  transition: all 0.2s ease-in-out;
+
+  width: 100%;
+  &:hover {
+    background-color: ${({ scrollnav }) =>
+      scrollnav ? 'var(--color-primary)' : '#fff'};
+    color: ${({ scrollnav }) =>
+      scrollnav ? '#fff' : 'var(--color-primary-light)'};
+    transition: all 0.2s ease-in-out;
+  }
+`;
+
+export const NavLogo = styled.img`
+  margin-top: ${({ scrollnav }) => (scrollnav ? '0.75rem' : '8rem')};
+  height: ${({ scrollnav }) => (scrollnav ? '100%' : '13rem')};
+  transition: all 0.15s ease-in-out;
+
+  @media screen and (max-width: 992px) {
+    height: ${({ scrollnav }) => (scrollnav ? '100%' : '11rem')};
+    margin-top: ${({ scrollnav }) => (scrollnav ? '0.75rem' : '7rem')};
+  }
+  @media screen and (max-width: 360px) {
+    height: ${({ scrollnav }) => (scrollnav ? '100%' : '9rem')};
+    margin-top: ${({ scrollnav }) => (scrollnav ? '0.75rem' : '5rem')};
+  }
+`;
