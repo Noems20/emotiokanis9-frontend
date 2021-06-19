@@ -38,8 +38,8 @@ export const Nav = styled.nav`
 
   z-index: 10;
 
-  @media screen and (max-width: 992px) {
-    background-color: '#fff';
+  @media screen and (max-width: 960px) {
+    transition: all 0.8s ease;
   }
 `;
 
