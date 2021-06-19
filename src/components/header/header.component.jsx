@@ -13,6 +13,7 @@ import {
   NavLogo,
   NavLink,
   SessionBtn,
+  NavLetterLogo,
 } from './header.styles';
 
 const Header = () => {
@@ -38,6 +39,7 @@ const Header = () => {
     <Nav scrollnav={scrollNav}>
       <NavContainer>
         <NavLogo src={image} scrollnav={scrollNav} />
+        <NavLetterLogo>K9</NavLetterLogo>
         <MobileIcon scrollnav={scrollNav}>
           <FaBars />
         </MobileIcon>

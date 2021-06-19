@@ -63,7 +63,7 @@ export const HeroH1 = styled.h1`
   font-family: 'Pacifico', cursive;
   font-size: 6rem;
   text-align: center;
-  line-height: 8rem;
+  line-height: 6.5rem;
 `;
 
 export const HeroP = styled.p`

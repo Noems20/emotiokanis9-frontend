@@ -5,21 +5,15 @@ export const MobileIcon = styled.div`
   display: none;
   visibility: hidden;
   position: absolute;
-  transition: all 0.2s ease-in-out;
 
   @media screen and (max-width: 992px) {
     position: static;
     visibility: visible;
     display: block;
-    margin-top: ${({ scrollnav }) => (scrollnav ? '0' : '5rem')};
-    color: ${({ scrollnav }) => (scrollnav ? '#000' : '#fff')};
+    color: var(--color-primary);
     font-size: 50px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-  }
-
-  @media screen and (max-width: 360px) {
-    margin-top: ${({ scrollnav }) => (scrollnav ? '0.75rem' : '4rem')};
   }
 `;
 
@@ -38,8 +32,9 @@ export const Nav = styled.nav`
 
   z-index: 10;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 992px) {
     transition: all 0.8s ease;
+    background-color: #fff;
   }
 `;
 
@@ -128,11 +123,20 @@ export const NavLogo = styled.img`
   transition: all 0.15s ease-in-out;
 
   @media screen and (max-width: 992px) {
-    height: ${({ scrollnav }) => (scrollnav ? '100%' : '11rem')};
-    margin-top: ${({ scrollnav }) => (scrollnav ? '0.75rem' : '7rem')};
+    display: none;
+    visibility: hidden;
+    /* height: 100%;
+    margin-top: 0.75rem; */
   }
-  @media screen and (max-width: 360px) {
-    height: ${({ scrollnav }) => (scrollnav ? '100%' : '9rem')};
-    margin-top: ${({ scrollnav }) => (scrollnav ? '0.75rem' : '5rem')};
+`;
+
+export const NavLetterLogo = styled.h1`
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 4rem;
+  color: var(--color-primary);
+
+  @media screen and (min-width: 992px) {
+    display: none;
+    visibility: hidden;
   }
 `;
