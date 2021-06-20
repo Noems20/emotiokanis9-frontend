@@ -20,7 +20,7 @@ export const InfoWrapper = styled.div`
 export const InfoRow = styled.div`
   width: 80%;
   display: grid;
-  grid-gap: 5rem;
+  /* grid-gap: 5rem; */
   /* grid-template-columns: 1fr 1fr; */
   grid-auto-columns: minimax(auto, 1fr);
   align-items: center;
@@ -30,7 +30,7 @@ export const InfoRow = styled.div`
   @media screen and (max-width: 992px) {
     grid-template-areas: ${({ imgStart }) =>
       imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
-    grid-gap: 0;
+    /* grid-gap: 0; */
   }
 `;
 
