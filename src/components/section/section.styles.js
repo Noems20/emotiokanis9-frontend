@@ -20,10 +20,15 @@ export const SectionWrapper = styled.div`
   display: grid;
   width: 80%;
   justify-items: center;
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+  }
 `;
 
 export const ContentWrapper = styled.div`
   display: grid;
+
   grid-auto-columns: 1fr 1fr;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
