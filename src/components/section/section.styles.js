@@ -27,7 +27,9 @@ export const ContentWrapper = styled.div`
   align-items: center;
 
   @media screen and (max-width: 992px) {
-    grid-template-areas: 'col1 col1' 'col2 col2';
+    grid-template-areas: ${({ imgStart }) =>
+      imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
+
     width: 70%;
     grid-gap: 0;
   }
@@ -35,6 +37,10 @@ export const ContentWrapper = styled.div`
 
 export const ColumnOne = styled.div`
   grid-area: col1;
+
+  &:last-child {
+    text-align: center;
+  }
 `;
 
 export const ColumnTwo = styled.div`
