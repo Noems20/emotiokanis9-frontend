@@ -21,8 +21,8 @@ export const InfoRow = styled.div`
   width: 80%;
   display: grid;
   grid-gap: 5rem;
-  grid-template-columns: 1fr 1fr;
-  /* grid-auto-columns: minimax(auto, 1fr); */
+  /* grid-template-columns: 1fr 1fr; */
+  grid-auto-columns: minimax(auto, 1fr);
   align-items: center;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? `'col2 col1'` : `'col1 col2'`};
