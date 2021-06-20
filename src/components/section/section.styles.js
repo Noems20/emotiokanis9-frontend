@@ -16,9 +16,13 @@ export const SectionContainer = styled.div`
   }
 `;
 
-export const ContentWrapper = styled.div`
+export const SectionWrapper = styled.div`
+  display: grid;
   width: 80%;
+  justify-items: center;
+`;
 
+export const ContentWrapper = styled.div`
   display: grid;
   grid-auto-columns: 1fr 1fr;
   grid-template-areas: ${({ imgStart }) =>

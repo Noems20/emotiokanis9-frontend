@@ -3,6 +3,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import {
   SectionContainer,
+  SectionWrapper,
   ContentWrapper,
   ColumnOne,
   ColumnTwo,
@@ -26,19 +27,21 @@ const Section = ({
   return (
     <>
       <SectionContainer lightBg={lightBg}>
-        <ContentWrapper imgStart={imgStart}>
-          <ColumnOne>
-            <Subtitle>{topLine}</Subtitle>
-            <Heading lightBg={lightBg}>{headline}</Heading>
-            <Description lightBg={lightBg}>{description}</Description>
-            <CustomButton primary>{buttonLabel}</CustomButton>
-          </ColumnOne>
-          <ColumnTwo>
-            <ImageWrapper>
-              <Image src={img} alt={alt} />
-            </ImageWrapper>
-          </ColumnTwo>
-        </ContentWrapper>
+        <SectionWrapper>
+          <ContentWrapper imgStart={imgStart}>
+            <ColumnOne>
+              <Subtitle>{topLine}</Subtitle>
+              <Heading lightBg={lightBg}>{headline}</Heading>
+              <Description lightBg={lightBg}>{description}</Description>
+              <CustomButton primary>{buttonLabel}</CustomButton>
+            </ColumnOne>
+            <ColumnTwo>
+              <ImageWrapper>
+                <Image src={img} alt={alt} />
+              </ImageWrapper>
+            </ColumnTwo>
+          </ContentWrapper>
+        </SectionWrapper>
       </SectionContainer>
     </>
   );
