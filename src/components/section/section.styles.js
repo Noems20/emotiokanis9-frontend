@@ -80,8 +80,8 @@ export const BtnWrap = styled.div`
 `;
 
 export const ImgWrap = styled.div`
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 `;
 
 export const Img = styled.img`
