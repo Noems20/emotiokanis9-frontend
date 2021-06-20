@@ -9,7 +9,7 @@ const Home = () => {
     <>
       <Hero />
       <Section {...homeObjOne} />
-      <Section {...homeObjTwo} />
+      {/* <Section {...homeObjTwo} /> */}
     </>
   );
 };
