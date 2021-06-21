@@ -9,11 +9,14 @@ export const MobileIcon = styled.div`
   @media screen and (max-width: 992px) {
     position: static;
     visibility: visible;
-    display: block;
+    display: inline-block;
     color: var(--color-primary);
-    font-size: 50px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+
+    & svg {
+      font-size: 3rem;
+    }
   }
 `;
 
