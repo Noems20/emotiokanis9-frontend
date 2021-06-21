@@ -10,7 +10,7 @@ export const SectionContainer = styled.div`
     height: 90rem;
   }
   @media screen and (max-width: 695px) {
-    height: 80rem;
+    height: 85rem;
   }
 `;
 
@@ -57,9 +57,6 @@ export const Description = styled.p`
   color: ${({ lightBg }) => (lightBg ? '#000' : '#fff')};
   margin-top: 2rem;
   margin-bottom: 2rem;
-  @media screen and (max-width: 1024px) {
-    font-size: 1.8rem;
-  }
 `;
 
 export const ImageWrapper = styled.div`
