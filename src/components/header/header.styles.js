@@ -77,7 +77,10 @@ const clickedNavMenu = css`
     flex: 0 1 100%;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.24);
 
-    animation: fade 0.5s;
+    animation: fadeIn 0.5s;
+
+    -webkit-transition: opacity 600ms, visibility 600ms;
+    transition: opacity 600ms, visibility 600ms;
 
     & li {
       flex: 0 1 100%;
@@ -93,21 +96,51 @@ const clickedNavMenu = css`
 `;
 const notClickedNavMenu = css`
   @media screen and (max-width: 992px) {
-    display: none;
-    position: absolute;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 100%;
+    height: 0rem;
     visibility: hidden;
     opacity: 0;
+
+    animation: fadeOut 0.3s;
+
     -webkit-transition: opacity 600ms, visibility 600ms;
     transition: opacity 600ms, visibility 600ms;
+
+    & li {
+      flex: 0 1 100%;
+      &:not(:last-child) {
+        border-bottom: 0.1px solid var(--color-primary);
+      }
+
+      &:last-child {
+        margin: 0.5rem auto;
+      }
+    }
   }
 
-  @keyframes fade {
+  @keyframes fadeIn {
     0% {
       opacity: 0;
+      height: 0rem;
     }
 
     100% {
       opacity: 1;
+      height: 45rem;
+    }
+  }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      height: 45rem;
+    }
+
+    100% {
+      opacity: 0;
+      height: 0rem;
     }
   }
 `;
