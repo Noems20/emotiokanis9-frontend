@@ -72,8 +72,8 @@ const clickedNavMenu = css`
     background: #fff;
     display: flex;
     flex-direction: column;
-
     flex: 0 1 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
     transition: all 0.5s ease;
 
@@ -113,7 +113,7 @@ export const NavLink = styled(LinkR)`
   font-family: 'Fredoka One', sans-serif;
   color: var(--color-primary);
   text-transform: uppercase;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 400;
   text-decoration: none;
 
@@ -132,6 +132,7 @@ export const NavLink = styled(LinkR)`
   }
 
   @media screen and (min-width: 992px) {
+    font-size: 1.8rem;
     padding: 0 2rem;
     color: ${({ scrollnav }) => (scrollnav ? '#000' : '#fff')};
     text-align: center;
@@ -145,7 +146,7 @@ export const SessionBtn = styled(LinkR)`
   background: var(--color-primary);
   border-radius: 100px;
   text-transform: uppercase;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 400;
 
   padding: 0.8rem 2rem;
@@ -156,6 +157,7 @@ export const SessionBtn = styled(LinkR)`
   }
 
   @media screen and (min-width: 992px) {
+    font-size: 1.8rem;
     margin-left: 1.2rem;
     width: 100%;
     padding: 0.8rem 2rem;
