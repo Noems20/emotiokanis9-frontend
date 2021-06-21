@@ -73,7 +73,7 @@ const clickedNavMenu = css`
     display: flex;
     flex-direction: column;
     flex: 0 1 100%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.24);
 
     transition: all 0.5s ease;
 
