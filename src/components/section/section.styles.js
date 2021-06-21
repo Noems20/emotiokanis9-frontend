@@ -13,7 +13,7 @@ export const InfoWrapper = styled.div`
   justify-items: center;
 
   @media screen and (max-width: 992px) {
-    height: 80rem;
+    height: 90rem;
   }
 `;
 
@@ -80,6 +80,7 @@ export const BtnWrap = styled.div`
 `;
 
 export const ImgWrap = styled.div`
+  margin-top: 5rem;
   /* display: flex;
   justify-content: center; --- NO ADD */
 `;
