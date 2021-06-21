@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars } from 'react-icons/fa';
+import { RiMenu2Line } from 'react-icons/ri';
+import { AiOutlineClose } from 'react-icons/ai';
 import logoB from '../images/header/logoB.svg';
 import logo from '../images/header/logo.svg';
 // import logoN from '../images/header/logoN.svg';
@@ -19,6 +20,11 @@ import {
 const Header = () => {
   const [scrollNav, setScrollNav] = useState(false);
   const [image, setImage] = useState();
+  const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
@@ -40,10 +46,10 @@ const Header = () => {
       <NavContainer>
         <NavLogo src={image} scrollnav={scrollNav} />
         <NavLetterLogo>K9</NavLetterLogo>
-        <MobileIcon scrollnav={scrollNav}>
-          <FaBars />
+        <MobileIcon scrollnav={scrollNav} onClick={handleClick}>
+          {clicked ? <AiOutlineClose /> : <RiMenu2Line />}
         </MobileIcon>
-        <NavMenu>
+        <NavMenu clicked={clicked}>
           <NavItem>
             <NavLink scrollnav={scrollNav}>INICIO</NavLink>
           </NavItem>

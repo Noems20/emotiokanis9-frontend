@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link as LinkR } from 'react-router-dom';
 
 export const MobileIcon = styled.div`
@@ -13,9 +13,9 @@ export const MobileIcon = styled.div`
     color: var(--color-primary);
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-
+    margin-left: auto;
     & svg {
-      font-size: 3rem;
+      font-size: 3.5rem;
     }
   }
 `;
@@ -54,18 +54,53 @@ export const NavContainer = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 992px) {
+      padding: 0 3rem;
+    }
   }
   @media screen and (max-width: 992px) {
     justify-content: space-between;
-    margin: 0 3rem;
+    width: 100%;
+    flex-wrap: wrap;
   }
 `;
 
-export const NavMenu = styled.ul`
-  color: #000;
+const clickedNavMenu = css`
+  @media screen and (max-width: 992px) {
+    height: 30rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+
+    flex: 0 1 100%;
+
+    transition: all 0.5s ease;
+
+    & li {
+      flex: 0 1 100%;
+      &:not(:last-child) {
+        border-bottom: 0.1px solid var(--color-primary);
+      }
+
+      &:last-child {
+        margin: 0.5rem auto;
+      }
+    }
+  }
+`;
+const notClickedNavMenu = css`
   @media screen and (max-width: 992px) {
     display: none;
   }
+`;
+
+const getNavMenuStyles = ({ clicked }) => {
+  return clicked ? clickedNavMenu : notClickedNavMenu;
+};
+
+export const NavMenu = styled.ul`
+  ${getNavMenuStyles}
 `;
 
 export const NavItem = styled.li`
@@ -76,12 +111,12 @@ export const NavItem = styled.li`
 
 export const NavLink = styled(LinkR)`
   font-family: 'Fredoka One', sans-serif;
-  color: ${({ scrollnav }) => (scrollnav ? '#000' : '#fff')};
+  color: var(--color-primary);
   text-transform: uppercase;
   font-size: 1.8rem;
   font-weight: 400;
   text-decoration: none;
-  padding: 0 2rem;
+
   transition: all 0.15s ease-in-out;
   font-weight: 400;
 
@@ -95,29 +130,45 @@ export const NavLink = styled(LinkR)`
     color: ${({ scrollnav }) => (scrollnav ? 'var(--color-primary)' : 'black')};
     transition: all 0.2s ease-in-out;
   }
+
+  @media screen and (min-width: 992px) {
+    padding: 0 2rem;
+    color: ${({ scrollnav }) => (scrollnav ? '#000' : '#fff')};
+    text-align: center;
+  }
 `;
 
 export const SessionBtn = styled(LinkR)`
   font-family: 'Fredoka One', sans-serif;
+  text-decoration: none;
   color: #fff;
+  background: var(--color-primary);
   border-radius: 100px;
   text-transform: uppercase;
   font-size: 1.8rem;
   font-weight: 400;
-  background: ${({ scrollnav }) =>
-    scrollnav ? '#000' : 'var(--color-primary-light)'};
-  text-decoration: none;
+
   padding: 0.8rem 2rem;
-  margin-left: 1.2rem;
   transition: all 0.2s ease-in-out;
 
-  width: 100%;
   &:hover {
-    background-color: ${({ scrollnav }) =>
-      scrollnav ? 'var(--color-primary)' : '#fff'};
-    color: ${({ scrollnav }) =>
-      scrollnav ? '#fff' : 'var(--color-primary-light)'};
-    transition: all 0.2s ease-in-out;
+    background-color: var(--color-primary-light);
+  }
+
+  @media screen and (min-width: 992px) {
+    margin-left: 1.2rem;
+    width: 100%;
+    padding: 0.8rem 2rem;
+    color: #fff;
+    background: ${({ scrollnav }) =>
+      scrollnav ? '#000' : 'var(--color-primary-light)'};
+    &:hover {
+      background-color: ${({ scrollnav }) =>
+        scrollnav ? 'var(--color-primary)' : '#fff'};
+      color: ${({ scrollnav }) =>
+        scrollnav ? '#fff' : 'var(--color-primary-light)'};
+      transition: all 0.2s ease-in-out;
+    }
   }
 `;
 
