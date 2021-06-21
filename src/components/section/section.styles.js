@@ -2,24 +2,15 @@ import styled from 'styled-components';
 
 export const SectionContainer = styled.div`
   background-color: ${({ lightBg }) => (lightBg ? '#fff' : '#000')};
-  height: 680px;
+  height: 68rem;
   display: flex;
   justify-content: center;
   align-items: center;
   @media screen and (max-width: 992px) {
-    height: 900px;
+    height: 90rem;
   }
   @media screen and (max-width: 695px) {
-    height: 850px;
-  }
-  @media screen and (max-width: 570px) {
-    height: 750px;
-  }
-  @media screen and (max-width: 431px) {
-    height: 600px;
-  }
-  @media screen and (max-width: 431px) {
-    height: 520px;
+    height: 87rem;
   }
 `;
 
