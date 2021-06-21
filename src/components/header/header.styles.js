@@ -70,12 +70,14 @@ const clickedNavMenu = css`
   @media screen and (max-width: 992px) {
     height: 45rem;
     background: #fff;
+    visibility: visible;
+    opacity: 1;
     display: flex;
     flex-direction: column;
     flex: 0 1 100%;
     box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.24);
 
-    transition: all 0.5s ease;
+    animation: fade 0.5s;
 
     & li {
       flex: 0 1 100%;
@@ -92,6 +94,21 @@ const clickedNavMenu = css`
 const notClickedNavMenu = css`
   @media screen and (max-width: 992px) {
     display: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 600ms, visibility 600ms;
+    transition: opacity 600ms, visibility 600ms;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
 `;
 
