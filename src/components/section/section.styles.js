@@ -13,7 +13,7 @@ export const InfoWrapper = styled.div`
   justify-items: center;
 
   @media screen and (max-width: 992px) {
-    height: 100rem;
+    height: 80rem;
   }
 `;
 
