@@ -68,7 +68,7 @@ export const NavContainer = styled.div`
 
 const clickedNavMenu = css`
   @media screen and (max-width: 992px) {
-    height: 30rem;
+    height: 45rem;
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -124,11 +124,9 @@ export const NavLink = styled(LinkR)`
   align-self: stretch;
   align-items: center;
   width: 100%;
+
   &:hover {
-    background-color: ${({ scrollnav }) =>
-      scrollnav ? 'var(--color-grey-light-1)' : 'none'};
-    color: ${({ scrollnav }) => (scrollnav ? 'var(--color-primary)' : 'black')};
-    transition: all 0.2s ease-in-out;
+    color: #000;
   }
 
   @media screen and (min-width: 992px) {
@@ -136,6 +134,13 @@ export const NavLink = styled(LinkR)`
     padding: 0 2rem;
     color: ${({ scrollnav }) => (scrollnav ? '#000' : '#fff')};
     text-align: center;
+    &:hover {
+      background-color: ${({ scrollnav }) =>
+        scrollnav ? 'var(--color-grey-light-1)' : 'none'};
+      color: ${({ scrollnav }) =>
+        scrollnav ? 'var(--color-primary)' : 'black'};
+      transition: all 0.2s ease-in-out;
+    }
   }
 `;
 
