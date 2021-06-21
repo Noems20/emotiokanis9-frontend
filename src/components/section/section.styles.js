@@ -9,8 +9,8 @@ export const SectionContainer = styled.div`
   @media screen and (max-width: 992px) {
     height: 90rem;
   }
-  @media screen and (max-width: 478px) {
-    height: 85rem;
+  @media screen and (max-width: 695px) {
+    height: 80rem;
   }
 `;
 
@@ -24,7 +24,6 @@ export const ContentWrapper = styled.div`
   align-items: center;
   @media screen and (max-width: 992px) {
     grid-template-areas: 'col1 col1' 'col2 col2';
-    width: 70%;
     grid-gap: 0;
   }
 `;
@@ -43,9 +42,6 @@ export const Subtitle = styled.h3`
   margin-bottom: 1.2rem;
   text-transform: uppercase;
   color: var(--color-primary);
-  @media screen and (max-width: 1024px) {
-    font-size: 1.5rem;
-  }
 `;
 
 export const Heading = styled.h1`
@@ -62,7 +58,7 @@ export const Description = styled.p`
   margin-top: 2rem;
   margin-bottom: 2rem;
   @media screen and (max-width: 1024px) {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 `;
 
