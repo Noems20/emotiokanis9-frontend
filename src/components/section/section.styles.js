@@ -8,12 +8,12 @@ export const InfoContainer = styled.div`
 export const InfoWrapper = styled.div`
   display: grid;
   z-index: 1;
-  height: 70rem;
+  height: 68rem;
   align-items: center;
   justify-items: center;
 
   @media screen and (max-width: 992px) {
-    height: 90rem;
+    height: 95rem;
   }
 `;
 
