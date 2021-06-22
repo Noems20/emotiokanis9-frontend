@@ -6,6 +6,7 @@ export const SectionContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   @media screen and (max-width: 992px) {
     height: 90rem;
   }
@@ -22,6 +23,7 @@ export const ContentWrapper = styled.div`
     imgStart ? `'col2 col1'` : `'col1 col2'`};
   grid-gap: 7rem;
   align-items: center;
+  z-index: 2;
   @media screen and (max-width: 992px) {
     grid-template-areas: 'col1 col1' 'col2 col2';
     grid-gap: 0;
@@ -60,8 +62,8 @@ export const Description = styled.p`
 `;
 
 export const ImageWrapper = styled.div`
-  /* display: flex;
-  justify-content: center; */
+  display: flex;
+  justify-content: center;
 `;
 
 export const Image = styled.img`
@@ -70,4 +72,26 @@ export const Image = styled.img`
   @media screen and (max-width: 992px) {
     margin-top: 2rem;
   }
+`;
+
+export const Decoration = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: ${({ imgStart }) =>
+    imgStart ? '0 100vw 25vh 0' : '0 0 25vh 100vw'};
+  border-color: transparent transparent var(--color-primary) transparent;
+  /* border-image-source: linear-gradient(to left, #743ad5, #d53a9d); */
+
+  background: rgb(30, 152, 228);
+  background: linear-gradient(
+    90deg,
+    rgba(30, 152, 228, 1) 0%,
+    rgba(0, 100, 161, 1) 49%
+  );
+  z-index: 1;
 `;

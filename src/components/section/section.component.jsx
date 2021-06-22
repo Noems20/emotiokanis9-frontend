@@ -11,6 +11,7 @@ import {
   Description,
   ImageWrapper,
   Image,
+  Decoration,
 } from './section.styles';
 
 const Section = ({
@@ -22,6 +23,7 @@ const Section = ({
   headline,
   description,
   buttonLabel,
+  decoration,
 }) => {
   return (
     <>
@@ -39,6 +41,7 @@ const Section = ({
             </ImageWrapper>
           </ColumnTwo>
         </ContentWrapper>
+        {decoration ? <Decoration imgStart={imgStart} /> : null}
       </SectionContainer>
     </>
   );
