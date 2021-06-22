@@ -62,8 +62,8 @@ export const Description = styled.p`
 `;
 
 export const ImageWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 `;
 
 export const Image = styled.img`
