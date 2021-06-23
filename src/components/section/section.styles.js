@@ -17,6 +17,7 @@ export const SectionContainer = styled.div`
 
 export const ContentWrapper = styled.div`
   width: 80%;
+
   display: grid;
   grid-auto-columns: 1fr 1fr;
   grid-template-areas: ${({ imgStart }) =>
@@ -32,10 +33,12 @@ export const ContentWrapper = styled.div`
 
 export const ColumnOne = styled.div`
   grid-area: col1;
+  /* max-height: 80%; */
 `;
 
 export const ColumnTwo = styled.div`
   grid-area: col2;
+  /* max-height: 80%; */
 `;
 
 export const Subtitle = styled.h3`
@@ -62,15 +65,17 @@ export const Description = styled.p`
 `;
 
 export const ImageWrapper = styled.div`
-  /* display: flex;
-  justify-content: center; */
 `;
 
 export const Image = styled.img`
-  width: 100%;
+  width:100%;
   max-width: 590px;
   @media screen and (max-width: 992px) {
+    /* max-height: 50%; */
+  display:block;
+    margin:auto;
     margin-top: 2rem;
+
   }
 `;
 
@@ -84,8 +89,10 @@ export const Decoration = styled.div`
   border-style: solid;
   border-width: ${({ imgStart }) =>
     imgStart ? '0 100vw 25vh 0' : '0 0 25vh 100vw'};
-  border-color: transparent transparent var(--color-primary) transparent;
-  /* border-image-source: linear-gradient(to left, #743ad5, #d53a9d); */
+  border-color: ${({ imgStart }) =>
+    imgStart
+      ? 'transparent transparent var(--color-primary-light) transparent'
+      : 'transparent transparent var(--color-primary) transparent'};
 
   background: rgb(30, 152, 228);
   background: linear-gradient(

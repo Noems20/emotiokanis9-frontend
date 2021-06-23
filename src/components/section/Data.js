@@ -1,27 +1,41 @@
 export const homeObjOne = {
   id: 'about',
   lightBg: true,
-  img: require('../images/section/svg-1.svg').default,
+  img: require('../images/section/svg/svg-1.svg').default,
   imgStart: false,
-  alt: 'Car',
-  topLine: 'Premium Bank',
-  headline: 'Unlimited Transactions with zero fees',
+  alt: 'Acariciar perro',
+  topLine: 'Servicios premium',
+  headline: 'Contamos con una gran variedad servicios',
   description:
-    'Get access to our exclusive app that allows you to send unlimited transactions without getting charged any fees',
-  buttonLabel: 'Get Started',
-  decoration: true,
+    'Tenemos hotel canino, servicio de paseo, entrenamiento personalizado, veterinaria y mucho mas..',
+  buttonLabel: 'Saber mas',
+  decoration: false,
 };
 
 export const homeObjTwo = {
   id: 'about',
   lightBg: false,
-  img: require('../images/section/svg-2.svg').default,
+  img: require('../images/section/svg/svg-5.svg').default,
   imgStart: true,
-  alt: 'Car',
-  topLine: 'Premium Bank',
-  headline: 'Unlimited Transactions with zero fees',
+  alt: 'Perro',
+  topLine: 'Agenda tu cita',
+  headline: 'Inicia sesión y agenda tu cita con uno de nuestros expertos',
   description:
-    'Get access to our exclusive app that allows you to send unlimited transactions without getting charged any fees',
-  buttonLabel: 'Get Started',
-  decoration: true,
+    'Crea tu cuenta o inicia sesión para poder agendar tu cita desde la comodidad de tu casa.',
+  buttonLabel: 'Iniciar sesión',
+  decoration: false,
+};
+
+export const homeObjThree = {
+  id: 'about',
+  lightBg: true,
+  img: require('../images/section/svg/svg-4.svg').default,
+  imgStart: false,
+  alt: 'Ganadores',
+  topLine: '¡Conócenos!',
+  headline: 'Deja a tu mejor amigo en manos de los mejores',
+  description:
+    'Hemos sido ganadores de multiples competencias a nivel nacional, no hay mejor lugar para tu mascota.',
+  buttonLabel: 'Saber mas',
+  decoration: false,
 };

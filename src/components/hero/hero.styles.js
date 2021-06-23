@@ -75,8 +75,10 @@ export const HeroP = styled.p`
 
 export const HeroButton = styled(CustomButton)`
   /* margin-top: 4rem; */
-
+  border: none;
   &:hover {
+    border: none;
     padding: 1rem 3rem;
   }
+
 `;

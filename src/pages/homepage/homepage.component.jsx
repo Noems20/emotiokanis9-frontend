@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../../components/hero/hero.component';
 import Section from '../../components/section/section.component';
 
-import { homeObjOne, homeObjTwo } from '../../components/section/Data.js';
+import { homeObjOne, homeObjTwo, homeObjThree } from '../../components/section/Data.js';
 
 const Home = () => {
   return (
@@ -10,6 +10,7 @@ const Home = () => {
       <Hero />
       <Section {...homeObjOne} />
       <Section {...homeObjTwo} />
+      <Section {...homeObjThree} />
     </>
   );
 };
