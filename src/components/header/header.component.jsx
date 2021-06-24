@@ -3,7 +3,6 @@ import { RiMenu2Line } from 'react-icons/ri';
 import { AiOutlineClose } from 'react-icons/ai';
 import logoB from '../images/header/logoB.svg';
 import logo from '../images/header/logo.svg';
-// import logoN from '../images/header/logoN.svg';
 
 import {
   MobileIcon,
@@ -17,10 +16,10 @@ import {
   NavLetterLogo,
 } from './header.styles';
 
-const Header = () => {
+const Header = ({ scroll }) => {
+  const [clicked, setClicked] = useState(false);
   const [scrollNav, setScrollNav] = useState(false);
   const [image, setImage] = useState();
-  const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
     setClicked(!clicked);
@@ -38,8 +37,13 @@ const Header = () => {
 
   useEffect(() => {
     setImage(logoB);
-    window.addEventListener('scroll', changeNav);
-  }, []);
+    if (scroll) {
+      window.addEventListener('scroll', changeNav);
+    } else {
+      setScrollNav(true);
+      setImage(logo);
+    }
+  }, [scroll]);
 
   return (
     <Nav scrollnav={scrollNav}>
@@ -51,19 +55,29 @@ const Header = () => {
         </MobileIcon>
         <NavMenu clicked={clicked}>
           <NavItem>
-            <NavLink scrollnav={scrollNav}>INICIO</NavLink>
+            <NavLink to='/' scrollnav={scrollNav}>
+              INICIO
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink scrollnav={scrollNav}>NOSOTROS</NavLink>
+            <NavLink to='/nosotros' scrollnav={scrollNav}>
+              NOSOTROS
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink scrollnav={scrollNav}>SERVICIOS</NavLink>
+            <NavLink to='/servicios' scrollnav={scrollNav}>
+              SERVICIOS
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink scrollnav={scrollNav}>Contacto</NavLink>
+            <NavLink to='/contacto' scrollnav={scrollNav}>
+              Contacto
+            </NavLink>
           </NavItem>
           <NavItem>
-            <SessionBtn scrollnav={scrollNav}>Iniciar sesión</SessionBtn>
+            <SessionBtn to='/login' scrollnav={scrollNav}>
+              Iniciar sesión
+            </SessionBtn>
           </NavItem>
         </NavMenu>
       </NavContainer>

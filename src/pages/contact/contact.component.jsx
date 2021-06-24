@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from '../../components/header/header.component';
 
-const Services = () => {
+const Contact = () => {
   return (
     <>
       <Header />
@@ -10,4 +10,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Contact;
