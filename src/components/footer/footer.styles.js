@@ -64,17 +64,18 @@ export const FooterLink = styled(Link)`
   text-transform: uppercase;
 
   margin: 0 2rem;
+  @media screen and (min-width: 992px) {
+    &:after {
+      display: block;
+      content: '';
+      border-bottom: solid 3px #fff;
+      transform: scaleX(0);
+      transition: transform 250ms ease-in-out;
+    }
 
-  &:after {
-    display: block;
-    content: '';
-    border-bottom: solid 3px #fff;
-    transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
-  }
-
-  &:hover:after {
-    transform: scaleX(1);
+    &:hover:after {
+      transform: scaleX(1);
+    }
   }
 
   @media screen and (max-width: 992px) {
