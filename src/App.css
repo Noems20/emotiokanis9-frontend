@@ -61,11 +61,11 @@
   }
 }
 
-@media screen and (max-width: 342px) {
+/* @media screen and (max-width: 342px) {
   * {
-    font-size: 7.2px; /* 7.2px - 45%*/
+    font-size: 7.2px; 
   }
-}
+} */
 
 @media screen and (max-width: 326px) {
   * {

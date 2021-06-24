@@ -10,7 +10,7 @@ export const FooterContainer = styled.div`
   height: 40rem;
 
   @media screen and (max-width: 992px) {
-    height: 45rem;
+    height: 46rem;
   }
 
   & .hero-waves {
@@ -103,5 +103,5 @@ export const WebsiteRights = styled.p`
   text-align: center;
   font-size: 1.5rem;
   color: #fff;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 `;
