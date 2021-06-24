@@ -174,6 +174,10 @@ export const NavLink = styled(LinkR)`
   align-self: stretch;
   align-items: center; */
 
+  &:hover {
+    color: #000;
+  }
+
   @media screen and (min-width: 992px) {
     font-size: 1.8rem;
     color: ${({ scrollnav }) => (scrollnav ? '#000' : '#fff')};
