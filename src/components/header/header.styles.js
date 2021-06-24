@@ -150,6 +150,7 @@ const getNavMenuStyles = ({ clicked }) => {
 };
 
 export const NavMenu = styled.ul`
+  list-style: none;
   ${getNavMenuStyles}
 `;
 
@@ -166,30 +167,39 @@ export const NavLink = styled(LinkR)`
   font-size: 2.2rem;
   font-weight: 400;
   text-decoration: none;
-
-  transition: all 0.15s ease-in-out;
-  font-weight: 400;
-
-  display: flex;
-  align-self: stretch;
-  align-items: center;
   width: 100%;
+  transition: all 0.15s ease-in-out;
 
-  &:hover {
-    color: #000;
-  }
+  /* display: flex;
+  align-self: stretch;
+  align-items: center; */
 
   @media screen and (min-width: 992px) {
     font-size: 1.8rem;
-    padding: 0 2rem;
     color: ${({ scrollnav }) => (scrollnav ? '#000' : '#fff')};
     text-align: center;
+
+    display: ${({ scrollnav }) => (scrollnav ? 'flex' : 'inline')};
+    align-self: ${({ scrollnav }) => (scrollnav ? 'stretch' : 'auto')};
+    align-items: center;
+
+    padding: 0 2rem;
     &:hover {
       background-color: ${({ scrollnav }) =>
         scrollnav ? 'var(--color-grey-light-1)' : 'none'};
       color: ${({ scrollnav }) =>
-        scrollnav ? 'var(--color-primary)' : 'black'};
-      transition: all 0.2s ease-in-out;
+        scrollnav ? 'var(--color-primary)' : '#fff'};
+    }
+    &:after {
+      display: block;
+      content: '';
+      border-bottom: solid 3px #fff;
+      transform: scaleX(0);
+      transition: transform 250ms ease-in-out;
+    }
+
+    &:hover:after {
+      transform: scaleX(1);
     }
   }
 `;
@@ -237,8 +247,6 @@ export const NavLogo = styled.img`
   @media screen and (max-width: 992px) {
     display: none;
     visibility: hidden;
-    /* height: 100%;
-    margin-top: 0.75rem; */
   }
 `;
 

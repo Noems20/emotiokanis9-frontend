@@ -19,7 +19,7 @@ export const homeObjTwo = {
   imgStart: true,
   alt: 'Perro',
   topLine: 'Agenda tu cita',
-  headline: 'Inicia sesión y agenda tu cita con uno de nuestros expertos',
+  headline: 'Agenda tu cita con uno de nuestros expertos',
   description:
     'Crea tu cuenta o inicia sesión para poder agendar tu cita desde la comodidad de tu casa.',
   buttonLabel: 'Iniciar sesión',

@@ -9,8 +9,12 @@ export const FooterContainer = styled.div`
   );
   height: 40rem;
 
+  @media screen and (max-width: 992px) {
+    height: 44rem;
+  }
+
   @media screen and (max-width: 478px) {
-    height: 45rem;
+    height: 47rem;
   }
 
   & .hero-waves {
@@ -52,6 +56,7 @@ export const LinksContainer = styled.ul`
 export const FooterLinks = styled.li``;
 
 export const FooterLink = styled(Link)`
+  display: inline-block;
   font-family: 'Fredoka One', sans-serif;
   font-size: 2rem;
   color: #fff;
@@ -60,8 +65,20 @@ export const FooterLink = styled(Link)`
 
   margin: 0 2rem;
 
-  &:hover {
-    border-bottom: 1px solid #fff;
+  &:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px #fff;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-bottom: 0.5rem;
   }
 `;
 
