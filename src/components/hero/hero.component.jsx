@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import {
   HeroContainer,
@@ -13,22 +13,8 @@ import {
 import image from '../images/hero/hero6.jpg';
 
 const Hero = () => {
-  const [scrollNav, setScrollNav] = useState(false);
-
-  const changeNav = () => {
-    if (window.scrollY >= 80) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', changeNav);
-  }, []);
-
   return (
-    <HeroContainer scrollnav={scrollNav}>
+    <HeroContainer>
       <HeroBackground>
         <HeroImage src={image} alt='Fondo de perro' />
       </HeroBackground>
