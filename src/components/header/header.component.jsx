@@ -30,7 +30,7 @@ const Header = ({ history }) => {
   useEffect(() => {
     let listener = undefined;
     let currentLocation = history.location.pathname;
-    console.log(currentLocation);
+    // console.log(currentLocation);
     if (currentLocation === '/') {
       window.addEventListener('scroll', changeNav);
       listener = true;
@@ -41,7 +41,6 @@ const Header = ({ history }) => {
     }
     // console.log(currentLocation);
     history.listen((location) => {
-      console.log(location.pathname);
       if (location.pathname === '/' && !listener) {
         window.addEventListener('scroll', changeNav);
         setScrollNav(false);
