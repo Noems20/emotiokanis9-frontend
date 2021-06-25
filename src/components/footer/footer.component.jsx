@@ -2,6 +2,8 @@ import React from 'react';
 import './waves.css';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
+import { HeaderItems } from './footer.items';
+
 import {
   FooterContainer,
   FooterWrapper,
@@ -45,34 +47,38 @@ const Footer = () => {
         <FooterWrapper>
           <FooterTitle>EmotioKanis9</FooterTitle>
           <LinksContainer>
-            <FooterLinks>
-              <FooterLink>Inicio</FooterLink>
-            </FooterLinks>
-            <FooterLinks>
-              <FooterLink>Nosotros</FooterLink>
-            </FooterLinks>
-            <FooterLinks>
-              <FooterLink>Servicios</FooterLink>
-            </FooterLinks>
-            <FooterLinks>
-              <FooterLink>Contacto</FooterLink>
-            </FooterLinks>
-            <FooterLinks>
-              <FooterLink>Iniciar sesión</FooterLink>{' '}
-            </FooterLinks>
+            {HeaderItems.map((item, index) => {
+              return (
+                <FooterLinks key={index}>
+                  <FooterLink to={item.url}>{item.title}</FooterLink>
+                </FooterLinks>
+              );
+            })}
           </LinksContainer>
           <SocialLinksContainer>
             <FooterSocialLinks>
-              <FooterSocialLink>
+              <FooterSocialLink
+                to={{ pathname: 'https://www.facebook.com/Emotiokanis9' }}
+                target='_blank'
+              >
                 <FaFacebook />
               </FooterSocialLink>
-              <FooterSocialLink>
+              <FooterSocialLink
+                to={{ pathname: 'https://www.facebook.com/Emotiokanis9' }}
+                target='_blank'
+              >
                 <FaInstagram />
               </FooterSocialLink>
-              <FooterSocialLink>
+              <FooterSocialLink
+                to={{ pathname: 'https://www.facebook.com/Emotiokanis9' }}
+                target='_blank'
+              >
                 <FaTwitter />
               </FooterSocialLink>
-              <FooterSocialLink>
+              <FooterSocialLink
+                to={{ pathname: 'https://www.facebook.com/Emotiokanis9' }}
+                target='_blank'
+              >
                 <FaYoutube />
               </FooterSocialLink>
             </FooterSocialLinks>

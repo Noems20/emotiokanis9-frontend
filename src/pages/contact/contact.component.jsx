@@ -1,13 +1,7 @@
 import React from 'react';
 
-import Header from '../../components/header/header.component';
-
 const Contact = () => {
-  return (
-    <>
-      <Header />
-    </>
-  );
+  return <></>;
 };
 
 export default Contact;

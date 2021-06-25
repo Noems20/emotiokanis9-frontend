@@ -93,7 +93,6 @@ export const SocialLinksContainer = styled.ul`
 export const FooterSocialLinks = styled.li``;
 
 export const FooterSocialLink = styled(Link)`
-  font-size: 2rem;
   color: #fff;
   text-decoration: none;
 
@@ -101,6 +100,11 @@ export const FooterSocialLink = styled(Link)`
 
   & svg {
     font-size: 3.5rem;
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: scale(1.5);
+      transition: transform 0.2s ease;
+    }
   }
 `;
 

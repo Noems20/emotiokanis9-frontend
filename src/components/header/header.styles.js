@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link as LinkR } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const MobileIcon = styled.div`
   display: none;
@@ -160,7 +160,7 @@ export const NavItem = styled.li`
   align-items: center;
 `;
 
-export const NavLink = styled(LinkR)`
+export const NavLink = styled(Link)`
   font-family: 'Fredoka One', sans-serif;
   color: var(--color-primary);
   text-transform: uppercase;
@@ -208,7 +208,7 @@ export const NavLink = styled(LinkR)`
   }
 `;
 
-export const SessionBtn = styled(LinkR)`
+export const SessionBtn = styled(Link)`
   font-family: 'Fredoka One', sans-serif;
   text-decoration: none;
   color: #fff;
@@ -243,6 +243,13 @@ export const SessionBtn = styled(LinkR)`
   }
 `;
 
+export const NavLogoLink = styled(Link)`
+  @media screen and (max-width: 992px) {
+    display: none;
+    visibility: hidden;
+  }
+`;
+
 export const NavLogo = styled.img`
   margin-top: ${({ scrollnav }) => (scrollnav ? '0.75rem' : '8rem')};
   height: ${({ scrollnav }) => (scrollnav ? '100%' : '13rem')};
@@ -254,8 +261,10 @@ export const NavLogo = styled.img`
   }
 `;
 
-export const NavLetterLogo = styled.h1`
+export const NavLetterLogo = styled(Link)`
+  text-decoration: none;
   font-family: 'Fredoka One', sans-serif;
+  font-weight: 600;
   font-size: 4rem;
   color: var(--color-primary);
 
