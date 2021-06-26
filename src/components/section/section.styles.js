@@ -64,18 +64,16 @@ export const Description = styled.p`
   margin-bottom: 2rem;
 `;
 
-export const ImageWrapper = styled.div`
-`;
+export const ImageWrapper = styled.div``;
 
 export const Image = styled.img`
-  width:100%;
+  width: 100%;
   max-width: 590px;
+  display: block;
+  margin: auto;
   @media screen and (max-width: 992px) {
     /* max-height: 50%; */
-  display:block;
-    margin:auto;
     margin-top: 2rem;
-
   }
 `;
 

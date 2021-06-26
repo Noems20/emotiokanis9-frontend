@@ -10,7 +10,7 @@ import {
   HeroButton,
 } from './hero.styles';
 
-import image from '../images/hero/hero6.jpg';
+import image from './images/hero6.jpg';
 
 const Hero = () => {
   return (

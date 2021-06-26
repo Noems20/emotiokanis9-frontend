@@ -1,7 +1,8 @@
 export const homeObjOne = {
   id: 'about',
   lightBg: true,
-  img: require('../images/section/svg/svg-1.svg').default,
+  img: require('../../components/section/images/homeSections/svg-1.svg')
+    .default,
   imgStart: false,
   alt: 'Acariciar perro',
   topLine: 'Servicios premium',
@@ -15,7 +16,8 @@ export const homeObjOne = {
 export const homeObjTwo = {
   id: 'about',
   lightBg: false,
-  img: require('../images/section/svg/svg-5.svg').default,
+  img: require('../../components/section/images/homeSections/svg-5.svg')
+    .default,
   imgStart: true,
   alt: 'Perro',
   topLine: 'Agenda tu cita',
@@ -29,7 +31,8 @@ export const homeObjTwo = {
 export const homeObjThree = {
   id: 'about',
   lightBg: true,
-  img: require('../images/section/svg/svg-4.svg').default,
+  img: require('../../components/section/images/homeSections/svg-4.svg')
+    .default,
   imgStart: false,
   alt: 'Ganadores',
   topLine: '¡Conócenos!',

@@ -4,8 +4,8 @@ import { withRouter } from 'react-router-dom';
 import { RiMenu2Line } from 'react-icons/ri';
 import { AiOutlineClose } from 'react-icons/ai';
 
-import logoB from '../images/header/logoB.svg';
-import logo from '../images/header/logo.svg';
+import logoB from './images/logoB.svg';
+import logo from './images/logo.svg';
 
 import { HeaderItems } from './header.items';
 

@@ -3,11 +3,7 @@ import React from 'react';
 import Hero from '../../components/hero/hero.component';
 import Section from '../../components/section/section.component';
 
-import {
-  homeObjOne,
-  homeObjTwo,
-  homeObjThree,
-} from '../../components/section/Data.js';
+import { homeObjOne, homeObjTwo, homeObjThree } from './home-data.js';
 
 const Home = () => {
   return (
