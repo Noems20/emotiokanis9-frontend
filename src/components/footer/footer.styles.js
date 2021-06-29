@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import tokens from '../../tokens';
 
 export const FooterContainer = styled.div`
   background: linear-gradient(
@@ -33,7 +34,7 @@ export const FooterWrapper = styled.div`
 `;
 
 export const FooterTitle = styled.h1`
-  font-family: 'Fredoka One', sans-serif;
+  font-family: ${tokens.fontPrimary};
   font-size: 5rem;
   color: #fff;
   padding-bottom: 1.5rem;
@@ -57,7 +58,7 @@ export const FooterLinks = styled.li``;
 
 export const FooterLink = styled(Link)`
   display: inline-block;
-  font-family: 'Fredoka One', sans-serif;
+  font-family: ${tokens.fontPrimary};
   font-size: 2rem;
   color: #fff;
   text-decoration: none;

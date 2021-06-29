@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import tokens from '../../tokens';
 
 const primaryButtonStyles = css`
   color: #fff;
@@ -14,7 +15,7 @@ const primaryButtonStyles = css`
 `;
 
 const secondaryButtonStyles = css`
-  border:none;
+  border: none;
   color: var(--color-primary);
   background-color: #fff;
 
@@ -34,7 +35,7 @@ const getButtonStyles = (props) => {
 };
 
 export const CustomButtonContainer = styled.button`
-  font-family: 'Fredoka One', sans-serif;
+  font-family: ${tokens.fontPrimary};
   font-size: 2rem;
   text-decoration: none;
   padding: 1rem 2rem;
@@ -43,9 +44,9 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 
-  @media screen and (min-width: 992px){
+  @media screen and (min-width: 992px) {
     &:active {
-    transform: translateY(2px);
+      transform: translateY(2px);
     }
   }
 

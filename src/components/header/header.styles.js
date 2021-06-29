@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
+import tokens from '../../tokens';
 
 export const MobileIcon = styled.div`
   display: none;
@@ -161,7 +162,7 @@ export const NavItem = styled.li`
 `;
 
 export const NavLink = styled(Link)`
-  font-family: 'Fredoka One', sans-serif;
+  font-family: ${tokens.fontPrimary};
   color: var(--color-primary);
   text-transform: uppercase;
   font-size: 2.2rem;
@@ -209,7 +210,7 @@ export const NavLink = styled(Link)`
 `;
 
 export const SessionBtn = styled(Link)`
-  font-family: 'Fredoka One', sans-serif;
+  font-family: ${tokens.fontPrimary};
   text-decoration: none;
   color: #fff;
   background: var(--color-primary);
@@ -263,7 +264,7 @@ export const NavLogo = styled.img`
 
 export const NavLetterLogo = styled(Link)`
   text-decoration: none;
-  font-family: 'Fredoka One', sans-serif;
+  font-family: ${tokens.fontPrimary};
   font-weight: 600;
   font-size: 4rem;
   color: var(--color-primary);
