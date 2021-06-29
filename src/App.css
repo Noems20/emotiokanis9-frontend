@@ -35,7 +35,7 @@
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 10px; /* 1 rem = 10px - 62.5%*/
+  font-size: 62.5%; /* 1 rem = 10px - 62.5%*/
 }
 
 body {
@@ -44,37 +44,37 @@ body {
 
 @media screen and (min-width: 1996px) {
   html {
-    font-size: 16px; /* 16px - 100%*/
+    font-size: 100%; /* 16px - 100%*/
   }
 }
 
 @media screen and (min-width: 1572px) {
   html {
-    font-size: 12.8px; /* 12.8px - 80%*/
+    font-size: 80%; /* 12.8px - 80%*/
   }
 }
 
 @media screen and (max-width: 992px) {
   html {
-    font-size: 9.12px; /* 9.12x - 57%*/
+    font-size: 57%; /* 9.12x - 57%*/
   }
 }
 
 @media screen and (max-width: 478px) {
   html {
-    font-size: 8px; /* 8px - 50%*/
+    font-size: 50%; /* 8px - 50%*/
   }
 }
 
 @media screen and (max-width: 430px) {
   html {
-    font-size: 6.4px; /* 6.4px - 40%*/
+    font-size: 40%; /* 6.4px - 40%*/
   }
 }
 
 @media screen and (max-width: 326px) {
   html {
-    font-size: 5.92px; /* 5.92px - 37%*/
+    font-size: 37%; /* 5.92px - 37%*/
   }
 }
 
