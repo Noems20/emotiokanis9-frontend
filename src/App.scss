@@ -31,10 +31,6 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  font-family: 'Encode Sans Expanded', sans-serif;
-}
-
 html {
   box-sizing: border-box;
   font-size: 62.5%; /* 1 rem = 10px - 62.5%*/
@@ -62,6 +58,11 @@ html {
   @media screen and (max-width: 326px) {
     font-size: 37%; /* 5.92px - 37%*/
   }
+}
+
+body {
+  font-family: 'Encode Sans Expanded', sans-serif;
+  -webkit-text-size-adjust: none;
 }
 
 input,
