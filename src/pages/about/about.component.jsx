@@ -1,6 +1,11 @@
 import React from 'react';
 
 import logo from './images/logo.svg';
+import { images } from './gallery-data';
+
+import GalleryCard from '../../components/gallery-card/gallery-card.component';
+
+import Masonry from 'react-masonry-css';
 
 import {
   Grid,
@@ -9,9 +14,16 @@ import {
   SectionDescription,
   Logo,
   SectionText,
+  Gallery,
 } from './about.styles';
 
 const About = () => {
+  const breakpoints = {
+    default: 3,
+    1100: 2,
+    700: 1,
+  };
+
   return (
     <>
       <Grid>
@@ -48,6 +60,23 @@ const About = () => {
             cupiditate iste ducimus reprehenderit possimus ad temporibus omnis
           </SectionText>
         </SectionDescription>
+        <SectionHeading>
+          <SectionTitle>
+            PREMIOS
+            <br /> DE <span>EmotioKanis9</span>
+          </SectionTitle>
+        </SectionHeading>
+        <Gallery>
+          <Masonry
+            breakpointCols={breakpoints}
+            className='my-masonry-grid'
+            columnClassName='my-masonry-grid_column'
+          >
+            {images.map(({ id, ...otherCardProps }) => (
+              <GalleryCard key={id} {...otherCardProps} />
+            ))}
+          </Masonry>
+        </Gallery>
       </Grid>
     </>
   );

@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import tokens from '../../tokens';
 
-import img from './images/fondo2.jpg';
-
 export const Grid = styled.div`
   display: grid;
-  grid-template-rows: calc(100vh - 8rem) max-content 100vh max-content;
+  grid-template-rows: calc(100vh - 8rem) max-content 100vh max-content 100vh max-content;
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start] repeat(
       8,
@@ -14,21 +12,16 @@ export const Grid = styled.div`
     [center-end] minmax(6rem, 1fr) [full-end];
 
   @media only screen and (max-width: 800px) {
-    grid-template-rows: calc(80vh - 8rem) max-content 80vh max-content;
+    grid-template-rows: calc(80vh - 8rem) max-content 80vh max-content 80vh max-content;
   }
   @media only screen and (max-width: 600px) {
-    grid-template-rows: calc(60vh - 8rem) max-content 60vh max-content;
+    grid-template-rows: calc(60vh - 8rem) max-content 60vh max-content 60vh max-content;
   }
 `;
 
 export const SectionHeading = styled.div`
   background-color: var(--color-primary-light);
   grid-column: full-start / full-end;
-  /* background-image: linear-gradient(
-      rgba(14, 121, 187, 0.6),
-      rgba(14, 121, 187, 0.6)
-    ),
-    url(${img}); */
 
   background-size: cover;
   background-position: center;
@@ -87,4 +80,9 @@ export const SectionText = styled.p`
   font-size: 2rem;
   font-weight: 300;
   text-align: center;
+`;
+
+export const Gallery = styled.div`
+  grid-column: full-start / full-end;
+  padding: 7rem 3rem;
 `;
