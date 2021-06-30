@@ -17,7 +17,7 @@ import {
   NavItem,
   NavLogo,
   NavLogoLink,
-  NavLink,
+  NavLinks,
   SessionBtn,
   NavLetterLogo,
 } from './header.styles';
@@ -84,14 +84,24 @@ const Header = ({ history }) => {
           {HeaderItems.map((item, index) => {
             return (
               <NavItem key={index}>
-                <NavLink to={item.url} scrollnav={scrollNav ? 1 : 0}>
+                <NavLinks
+                  activeClassName='is-active'
+                  to={item.url}
+                  exact
+                  scrollnav={scrollNav ? 1 : 0}
+                >
                   {item.title}
-                </NavLink>
+                </NavLinks>
               </NavItem>
             );
           })}
           <NavItem>
-            <SessionBtn to='/login' scrollnav={scrollNav ? 1 : 0}>
+            <SessionBtn
+              activeClassName='is-active'
+              to='/login'
+              exact
+              scrollnav={scrollNav ? 1 : 0}
+            >
               Iniciar sesión
             </SessionBtn>
           </NavItem>

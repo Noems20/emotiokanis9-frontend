@@ -67,10 +67,11 @@ export const HeroH1 = styled.h1`
 `;
 
 export const HeroP = styled.p`
+  font-size: ${({ large }) => (large ? '3rem' : '2rem')};
+  font-weight: 400;
   text-align: center;
   margin-bottom: ${({ large }) => (large ? '2rem' : '0')};
   padding-bottom: 2.5rem;
-  font-size: ${({ large }) => (large ? '3rem' : '2rem')};
 `;
 
 export const HeroButton = styled(CustomButton)`
@@ -80,5 +81,4 @@ export const HeroButton = styled(CustomButton)`
     border: none;
     padding: 1rem 3rem;
   }
-
 `;

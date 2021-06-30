@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import tokens from '../../tokens';
 
 export const MobileIcon = styled.div`
@@ -161,7 +161,7 @@ export const NavItem = styled.li`
   align-items: center;
 `;
 
-export const NavLink = styled(Link)`
+export const NavLinks = styled(NavLink)`
   font-family: ${tokens.fontPrimary};
   color: var(--color-primary);
   text-transform: uppercase;
@@ -175,7 +175,8 @@ export const NavLink = styled(Link)`
   align-self: stretch;
   align-items: center; */
 
-  &:hover {
+  &:hover,
+  &.is-active {
     color: #000;
   }
 
@@ -189,7 +190,8 @@ export const NavLink = styled(Link)`
     align-items: center;
 
     padding: 0 2rem;
-    &:hover {
+    &:hover,
+    &.is-active {
       background-color: ${({ scrollnav }) =>
         scrollnav ? 'var(--color-grey-light-1)' : 'none'};
       color: ${({ scrollnav }) =>
@@ -203,13 +205,14 @@ export const NavLink = styled(Link)`
       transition: transform 250ms ease-in-out;
     }
 
-    &:hover:after {
+    &:hover:after,
+    &.is-active {
       transform: scaleX(1);
     }
   }
 `;
 
-export const SessionBtn = styled(Link)`
+export const SessionBtn = styled(NavLink)`
   font-family: ${tokens.fontPrimary};
   text-decoration: none;
   color: #fff;
@@ -222,7 +225,8 @@ export const SessionBtn = styled(Link)`
   padding: 0.8rem 2rem;
   transition: all 0.2s ease-in-out;
 
-  &:hover {
+  &:hover,
+  &.is-active {
     background-color: var(--color-primary-light);
   }
 
