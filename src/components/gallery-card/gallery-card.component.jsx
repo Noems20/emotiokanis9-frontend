@@ -10,10 +10,10 @@ import {
 
 // import image from '../../pages/about/images/gallery/img1.jpg';
 
-const GalleryCard = ({ title, description, url, alt }) => {
+const GalleryCard = ({ title, description, url, alt, setSelectedImg }) => {
   return (
     <>
-      <CardContainer>
+      <CardContainer onClick={() => setSelectedImg(url)}>
         <CardImage src={url} alt={alt} />
         <CardDescription>
           <CardTitle>{title.toUpperCase()}</CardTitle>

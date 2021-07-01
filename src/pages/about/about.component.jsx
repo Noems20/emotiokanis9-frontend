@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import logo from './images/logo.svg';
 import { images } from './gallery-data';
 
 import GalleryCard from '../../components/gallery-card/gallery-card.component';
+import Modal from '../../components/modal/modal.component';
 
 import Masonry from 'react-masonry-css';
 
@@ -18,6 +19,8 @@ import {
 } from './about.styles';
 
 const About = () => {
+  const [selectedImg, setSelectedImg] = useState(null);
+
   const breakpoints = {
     default: 3,
     1100: 2,
@@ -73,11 +76,18 @@ const About = () => {
             columnClassName='my-masonry-grid_column'
           >
             {images.map(({ id, ...otherCardProps }) => (
-              <GalleryCard key={id} {...otherCardProps} />
+              <GalleryCard
+                key={id}
+                setSelectedImg={setSelectedImg}
+                {...otherCardProps}
+              />
             ))}
           </Masonry>
         </Gallery>
       </Grid>
+      {selectedImg && (
+        <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+      )}
     </>
   );
 };
