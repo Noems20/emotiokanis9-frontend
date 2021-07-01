@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import logo from './images/logo.svg';
 import { images } from './gallery-data';
@@ -21,6 +23,10 @@ import {
 const About = () => {
   const [selectedImg, setSelectedImg] = useState(null);
 
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   const breakpoints = {
     default: 3,
     1100: 2,
@@ -37,8 +43,8 @@ const About = () => {
           </SectionTitle>
         </SectionHeading>
         <SectionDescription>
-          <Logo src={logo} />
-          <SectionText>
+          <Logo src={logo} data-aos='fade-right' />
+          <SectionText data-aos='fade-left'>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda,
             iste veritatis repellat rem quidem tenetur culpa sint a tempore
             accusantium beatae nulla officia iure reprehenderit accusamus? Id
@@ -48,13 +54,13 @@ const About = () => {
           </SectionText>
         </SectionDescription>
         <SectionHeading>
-          <SectionTitle>
+          <SectionTitle data-aos='flip-right'>
             LA MISIÓN
             <br /> DE <span>EmotioKanis9</span>
           </SectionTitle>
         </SectionHeading>
         <SectionDescription>
-          <SectionText>
+          <SectionText data-aos='fade-right'>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda,
             iste veritatis repellat rem quidem tenetur culpa sint a tempore
             accusantium beatae nulla officia iure reprehenderit accusamus? Id
@@ -64,7 +70,7 @@ const About = () => {
           </SectionText>
         </SectionDescription>
         <SectionHeading>
-          <SectionTitle>
+          <SectionTitle data-aos='flip-left'>
             PREMIOS
             <br /> DE <span>EmotioKanis9</span>
           </SectionTitle>

@@ -12,6 +12,7 @@ export const CardContainer = styled.div`
   grid-template-rows: repeat(2, min-content);
 
   transition: all 0.2s;
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.01);
