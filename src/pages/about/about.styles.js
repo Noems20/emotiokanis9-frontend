@@ -12,10 +12,10 @@ export const Grid = styled.div`
     [center-end] minmax(6rem, 1fr) [full-end];
 
   @media only screen and (max-width: 800px) {
-    grid-template-rows: calc(80vh - 8rem) max-content 80vh max-content 80vh max-content;
+    grid-template-rows: calc(100vh - 5.5rem) max-content 100vh max-content 100vh max-content;
   }
   @media only screen and (max-width: 600px) {
-    grid-template-rows: calc(60vh - 8rem) max-content 60vh max-content 60vh max-content;
+    grid-template-rows: calc(100vh - 5.5rem) max-content 100vh max-content 100vh max-content;
   }
 `;
 
