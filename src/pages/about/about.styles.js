@@ -16,9 +16,11 @@ export const Grid = styled.div`
     [center-end] minmax(6rem, 1fr) [full-end];
 
   @media only screen and (max-width: 800px) {
-    grid-template-rows: calc(100vh - 5.5rem) max-content calc(100vh - 5.5rem) max-content calc(
+    grid-template-rows:
+      calc(100vh - 5.5rem) max-content calc(100vh - 5.5rem) max-content calc(
         100vh - 5.5rem
-      ) max-content;
+      )
+      max-content;
   }
   /* @media only screen and (max-width: 600px) {
     grid-template-rows: calc(100vh - 5.5rem) max-content 100vh max-content 100vh max-content;
