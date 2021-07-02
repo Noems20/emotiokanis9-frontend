@@ -3,7 +3,11 @@ import tokens from '../../tokens';
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-rows: calc(100vh - 8rem) max-content 100vh max-content 100vh max-content;
+  grid-template-rows:
+    calc(100vh - 8rem) max-content calc(100vh - 8rem) max-content calc(
+      100vh - 8rem
+    )
+    max-content;
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start] repeat(
       8,
@@ -12,11 +16,13 @@ export const Grid = styled.div`
     [center-end] minmax(6rem, 1fr) [full-end];
 
   @media only screen and (max-width: 800px) {
-    grid-template-rows: calc(100vh - 5.5rem) max-content 100vh max-content 100vh max-content;
+    grid-template-rows: calc(100vh - 5.5rem) max-content calc(100vh - 5.5rem) max-content calc(
+        100vh - 5.5rem
+      ) max-content;
   }
-  @media only screen and (max-width: 600px) {
+  /* @media only screen and (max-width: 600px) {
     grid-template-rows: calc(100vh - 5.5rem) max-content 100vh max-content 100vh max-content;
-  }
+  } */
 `;
 
 export const SectionHeading = styled.div`
