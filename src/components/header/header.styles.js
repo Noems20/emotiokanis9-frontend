@@ -256,8 +256,8 @@ export const NavLogoLink = styled(Link)`
 `;
 
 export const NavLogo = styled.img`
-  margin-top: ${({ scrollnav }) => (scrollnav ? '0.75rem' : '8rem')};
-  height: ${({ scrollnav }) => (scrollnav ? '100%' : '13rem')};
+  margin-top: ${({ scrollnav }) => (scrollnav ? '0' : '8rem')};
+  height: ${({ scrollnav }) => (scrollnav ? '90%' : '13rem')};
   transition: all 0.15s ease-in-out;
 
   @media screen and (max-width: 992px) {
