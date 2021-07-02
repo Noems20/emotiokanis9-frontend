@@ -16,6 +16,10 @@ export const ServiceHeading = styled.div`
   display: grid;
   justify-content: center;
   align-content: center;
+
+  @media only screen and (max-width: 1400px) {
+    background-attachment: scroll;
+  }
 `;
 export const ServiceTitle = styled.h1`
   font-family: ${tokens.fontPrimary};
