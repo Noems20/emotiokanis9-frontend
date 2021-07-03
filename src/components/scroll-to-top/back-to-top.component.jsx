@@ -6,9 +6,20 @@ import { animateScroll as scroll } from 'react-scroll';
 const BackToTop = () => {
   const [showScroll, setShowScroll] = useState(false);
 
+  //   useEffect(() => {
+
+  //     return () => {
+  //       window.removeEventListener('scroll', checkScrollTop);
+  //     };
+  //   }, [showScroll, checkScrollTop]);
+
   const checkScrollTop = () => {
     if (!showScroll && window.pageYOffset > 400) {
-      setShowScroll(true);
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        setShowScroll(false);
+      } else {
+        setShowScroll(true);
+      }
     } else if (showScroll && window.pageYOffset <= 400) {
       setShowScroll(false);
     }
