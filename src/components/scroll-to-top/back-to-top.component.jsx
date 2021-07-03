@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from './back-to-top.styles';
 import { HiChevronDoubleUp } from 'react-icons/hi';
+import { animateScroll as scroll } from 'react-scroll';
 
 const BackToTop = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -14,13 +15,12 @@ const BackToTop = () => {
   };
 
   const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scroll.scrollToTop();
   };
 
   window.addEventListener('scroll', checkScrollTop);
   return (
     <Button
-      className='scrollTop'
       onClick={scrollTop}
       style={{
         opacity: showScroll ? '1' : '0',
