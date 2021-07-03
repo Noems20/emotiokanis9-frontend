@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import tokens from '../../tokens';
 
 export const Grid = styled.div`
+  overflow-x: hidden;
   display: grid;
   grid-template-rows:
     calc(100vh - 8rem) max-content calc(100vh - 8rem) max-content calc(
