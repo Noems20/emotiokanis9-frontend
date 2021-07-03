@@ -8,11 +8,15 @@ import About from './pages/about/about.component';
 import Contact from './pages/contact/contact.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import Footer from './components/footer/footer.component';
+import ScrollToTop from './components/scroll-to-top/scroll-to-top';
+import BackToTop from './components/scroll-to-top/back-to-top.component';
 
 function App() {
   return (
     <>
       <Header />
+      <ScrollToTop />
+      <BackToTop />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/servicios' component={Services} />
@@ -20,6 +24,7 @@ function App() {
         <Route exact path='/contacto' component={Contact} />
         <Route exact path='/login' component={SignInAndSignUpPage} />
       </Switch>
+
       <Footer />
     </>
   );
