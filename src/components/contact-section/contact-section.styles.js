@@ -90,6 +90,10 @@ export const InfoText = styled.p`
   font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.5;
+
+  @media only screen and (max-width: 1200px) {
+    font-size: 2rem;
+  }
 `;
 
 export const ContactFormContainer = styled.div`
@@ -113,7 +117,10 @@ export const ContactFormTitle = styled.h1`
   text-transform: uppercase;
 
   @media only screen and (max-width: 700px) {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  @media only screen and (max-width: 476px) {
+    margin-bottom: 3rem;
   }
 `;
 

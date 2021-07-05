@@ -27,9 +27,12 @@ export const FormInputContainer = styled.input`
   border: none;
   border-radius: 0;
   border-bottom: 1px solid ${subColor};
+  transition: all 0.2s;
 
   &:focus {
     outline: none;
+    border-bottom: 1px solid var(--color-primary-light);
+    transition: all 0.2s;
   }
 
   &:focus ~ label {
