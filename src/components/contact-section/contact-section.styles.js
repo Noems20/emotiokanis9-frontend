@@ -26,6 +26,10 @@ export const ContactContainer = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
+
+  @media only screen and (max-width: 370px) {
+    grid-column: full-start / full-end;
+  }
 `;
 
 export const ContactInfoContainer = styled.div`
@@ -83,6 +87,12 @@ export const InfoImgContainer = styled.div`
 
   & svg {
     font-size: 2.5rem;
+  }
+
+  @media only screen and (max-width: 470px) {
+    & svg {
+      font-size: 3rem;
+    }
   }
 `;
 export const InfoText = styled.p`

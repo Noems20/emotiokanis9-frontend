@@ -26,6 +26,7 @@ export const Nav = styled.nav`
   box-shadow: ${({ scrollnav }) =>
     scrollnav ? 'rgba(0, 0, 0, 0.24) 0px 3px 8px' : 'none'};
   background-size: cover;
+
   height: 8rem;
   display: flex;
   justify-content: center;
@@ -48,7 +49,7 @@ export const NavContainer = styled.div`
   justify-content: space-evenly;
   align-self: stretch;
   align-items: center;
-  width: 100%;
+  width: 100vw;
 
   & > * {
     cursor: pointer;

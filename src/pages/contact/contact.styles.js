@@ -63,4 +63,8 @@ export const Title = styled.h1`
     text-align: center;
     margin-left: 0;
   }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 9rem;
+  }
 `;
