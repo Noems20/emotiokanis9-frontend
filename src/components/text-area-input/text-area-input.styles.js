@@ -4,7 +4,7 @@ const subColor = 'grey';
 const mainColor = 'black';
 
 const shrinkLabelStyles = css`
-  top: -1.4rem;
+  top: -2.5rem;
   font-size: 1.4rem;
   color: ${mainColor};
 
@@ -24,7 +24,7 @@ export const FormInputContainer = styled.textarea`
   resize: vertical;
   background-color: white;
   color: ${subColor};
-  font-size: 18px;
+  font-size: 1.8rem;
   padding: 10px 10px 10px 5px;
   display: inline-block;
   width: 100%;
@@ -36,9 +36,9 @@ export const FormInputContainer = styled.textarea`
     outline: none;
   }
 
-  /* &:focus ~ label {
-    ${shrinkLabelStyles}
-  } */
+  @media only screen and (max-width: 430px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const MagicBox = styled.div`

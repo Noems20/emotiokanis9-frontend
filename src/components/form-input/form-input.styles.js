@@ -23,7 +23,7 @@ export const GroupContainer = styled.div`
 export const FormInputContainer = styled.input`
   background-color: white;
   color: ${subColor};
-  font-size: 18px;
+  font-size: 1.8rem;
   padding: 10px 10px 10px 5px;
   display: inline-block;
   width: 100%;
@@ -35,9 +35,9 @@ export const FormInputContainer = styled.input`
     outline: none;
   }
 
-  /* &:focus ~ label {
-    ${shrinkLabelStyles}
-  } */
+  @media only screen and (max-width: 430px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const MagicBox = styled.div`
