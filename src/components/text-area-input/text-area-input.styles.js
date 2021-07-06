@@ -44,12 +44,12 @@ export const FormInputContainer = styled.textarea`
 export const MagicBox = styled.div`
   &::after,
   &::before {
-    content: ' ';
+    content: '';
     width: 0%;
+    position: absolute;
     bottom: 0px;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
     transition: ease-in-out 0.5s all;
   }
 
