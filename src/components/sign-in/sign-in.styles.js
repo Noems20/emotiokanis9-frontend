@@ -10,6 +10,10 @@ export const SignInTitle = styled.h1`
   font-family: ${tokens.fontPrimary};
   font-weight: 300;
   font-size: 2.5rem;
+
+  @media only screen and (max-width: 430px) {
+    font-size: 3rem;
+  }
 `;
 
 export const SignInSubtitle = styled.h3`
@@ -17,6 +21,10 @@ export const SignInSubtitle = styled.h3`
   font-weight: 300;
   margin-top: 1rem;
   margin-bottom: 3rem;
+
+  @media only screen and (max-width: 430px) {
+    font-size: 2rem;
+  }
 `;
 
 export const FormContainer = styled.div`
