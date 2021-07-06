@@ -20,7 +20,8 @@ export const GroupContainer = styled.div`
   }
 `;
 
-export const FormInputContainer = styled.input`
+export const FormInputContainer = styled.textarea`
+  resize: vertical;
   background-color: white;
   color: ${subColor};
   font-size: 18px;
@@ -45,7 +46,7 @@ export const MagicBox = styled.div`
   &::before {
     content: ' ';
     width: 0%;
-    bottom: -2.5px;
+    bottom: 0px;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;

@@ -5,9 +5,9 @@ import {
   MagicBox,
   FormInputContainer,
   FormInputLabel,
-} from './form-input.styles';
+} from './text-area-input.styles';
 
-const FormInput = ({ handleChange, label, ...props }) => (
+const TextAreaInput = ({ handleChange, label, ...props }) => (
   <GroupContainer>
     <MagicBox>
       <FormInputContainer onChange={handleChange} {...props} />
@@ -20,4 +20,4 @@ const FormInput = ({ handleChange, label, ...props }) => (
   </GroupContainer>
 );
 
-export default FormInput;
+export default TextAreaInput;

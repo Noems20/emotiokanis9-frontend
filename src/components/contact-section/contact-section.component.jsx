@@ -3,6 +3,7 @@ import { MdLocationOn, MdPhoneInTalk, MdMail } from 'react-icons/md';
 import { BiWorld } from 'react-icons/bi';
 
 import FormInput from '../form-input/form-input.component';
+import TextAreaInput from '../text-area-input/text-area-input.component';
 
 import {
   ContactContainer,
@@ -19,17 +20,17 @@ import {
 } from './contact-section.styles';
 
 const ContactSection = () => {
-  const [userCredentials, setCredentials] = useState({
+  const [userCredentials, setUserCredentials] = useState({
+    displayName: '',
+    lastname: '',
     email: '',
-    password: '',
+    message: '',
   });
-
-  const { email } = userCredentials;
-
+  const { displayName, lastname, email, message } = userCredentials;
   const handleChange = (event) => {
-    const { value, name } = event.target;
+    const { name, value } = event.target;
 
-    setCredentials({ ...userCredentials, [name]: value });
+    setUserCredentials({ ...userCredentials, [name]: value });
   };
   return (
     <>
@@ -78,18 +79,18 @@ const ContactSection = () => {
           <ContactFormTitle> Contáctanos</ContactFormTitle>
           <ContactForm>
             <FormInput
-              name='email'
-              type='email'
+              name='displayName'
+              type='text'
               handleChange={handleChange}
-              value={email}
+              value={displayName}
               label='Nombre'
               required
             />
             <FormInput
-              name='email'
-              type='email'
+              name='lastname'
+              type='text'
               handleChange={handleChange}
-              value={email}
+              value={lastname}
               label='Apellidos'
               required
             />
@@ -101,12 +102,13 @@ const ContactSection = () => {
               label='Email'
               required
             />
-            <FormInput
-              name='email'
-              type='email'
+            <TextAreaInput
+              name='message'
+              type='text'
               handleChange={handleChange}
-              value={email}
+              value={message}
               label='Mensaje'
+              rows='1'
               required
             />
             <Button primary>Enviar mail</Button>
