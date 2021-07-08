@@ -30,12 +30,27 @@ const googleSignInStyles = css`
   background-color: #4285f4;
   color: white;
   border: 0.2px solid #4285f4;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1px;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
 
   &:hover {
     border: 0.2px solid var(--color-primary);
     background-color: #fff;
     color: var(--color-primary);
     transition: all 0.2s ease-in-out;
+  }
+
+  & img {
+    background-color: white;
+    border-radius: 50%;
+    padding: 3px;
+    height: 100%;
   }
 `;
 
@@ -64,4 +79,8 @@ export const CustomButtonContainer = styled.button`
   }
 
   ${getButtonStyles}
+`;
+
+export const ChildrenContainer = styled.div`
+  margin-left: -2rem;
 `;

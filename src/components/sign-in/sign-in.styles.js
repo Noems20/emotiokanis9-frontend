@@ -30,10 +30,12 @@ export const SignInSubtitle = styled.h3`
 export const FormContainer = styled.form`
   display: grid;
   grid-gap: 3rem;
+  /* grid-template-rows: repeat(3, 1fr); */
 `;
 
 export const ButtonsContainer = styled.div`
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 `;
