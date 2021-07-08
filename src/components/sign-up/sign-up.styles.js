@@ -26,7 +26,7 @@ export const SignUpSubtitle = styled.h3`
   }
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.form`
   display: grid;
   grid-gap: 3rem;
 `;

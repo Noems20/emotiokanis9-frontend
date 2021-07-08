@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 
+import { auth } from '../../firebase/firebase.utils';
+
 import { RiMenu2Line } from 'react-icons/ri';
 import { AiOutlineClose } from 'react-icons/ai';
 
@@ -19,15 +21,17 @@ import {
   NavLogoLink,
   NavLinks,
   SessionBtn,
+  CloseSessionBtn,
   NavLetterLogo,
 } from './header.styles';
 
-const Header = ({ history }) => {
+const Header = ({ history, currentUser }) => {
   const [clicked, setClicked] = useState(false);
   const [scrollNav, setScrollNav] = useState();
   const [image, setImage] = useState();
 
   useEffect(() => {
+    // ------------------ DETECTAR PAGINA PARA FONDO TRANSPARENTE ------
     let listener = undefined;
     let currentLocation = history.location.pathname;
     // console.log(currentLocation);
@@ -60,6 +64,7 @@ const Header = ({ history }) => {
     setClicked(!clicked);
   };
 
+  // ------------------- CAMBIAR BARRA DE NAVEGACIÓN EN SCROLL ----------------
   const changeNav = () => {
     if (window.scrollY >= 80) {
       setScrollNav(true);
@@ -96,14 +101,24 @@ const Header = ({ history }) => {
             );
           })}
           <NavItem>
-            <SessionBtn
-              activeClassName='is-active'
-              to='/login'
-              exact
-              scrollnav={scrollNav ? 1 : 0}
-            >
-              Iniciar sesión
-            </SessionBtn>
+            {/* Boton para iniciar sesión o cerrar dependiendo de usuario */}
+            {currentUser ? (
+              <CloseSessionBtn
+                onClick={() => auth.signOut()}
+                scrollnav={scrollNav ? 1 : 0}
+              >
+                Cerrar sesión
+              </CloseSessionBtn>
+            ) : (
+              <SessionBtn
+                activeClassName='is-active'
+                to='/login'
+                exact
+                scrollnav={scrollNav ? 1 : 0}
+              >
+                Iniciar sesión
+              </SessionBtn>
+            )}
           </NavItem>
         </NavMenu>
       </NavContainer>

@@ -1,4 +1,4 @@
-import './App.scss';
+import { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from './pages/homepage/homepage.component';
@@ -10,11 +10,38 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import Footer from './components/footer/footer.component';
 import ScrollToTop from './components/scroll-to-top/scroll-to-top';
 import BackToTop from './components/scroll-to-top/back-to-top.component';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+
+import './App.scss';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot((snapShot) => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+        });
+      } else {
+        setCurrentUser(userAuth);
+      }
+    });
+
+    return () => {
+      unsubscribeFromAuth();
+    };
+  }, []);
+
+  // console.log(currentUser);
   return (
     <>
-      <Header />
+      <Header currentUser={currentUser} />
       <ScrollToTop />
       <BackToTop />
       <Switch>

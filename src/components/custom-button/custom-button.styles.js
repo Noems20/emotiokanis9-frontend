@@ -26,10 +26,23 @@ const secondaryButtonStyles = css`
   }
 `;
 
+const googleSignInStyles = css`
+  background-color: #4285f4;
+  color: white;
+  border: 0.2px solid #4285f4;
+
+  &:hover {
+    border: 0.2px solid var(--color-primary);
+    background-color: #fff;
+    color: var(--color-primary);
+    transition: all 0.2s ease-in-out;
+  }
+`;
+
 const getButtonStyles = (props) => {
-  //   if (props.isGoogleSignIn) {
-  //     return googleSignInStyles;
-  //   }
+  if (props.isGoogleSignIn) {
+    return googleSignInStyles;
+  }
 
   return props.primary ? primaryButtonStyles : secondaryButtonStyles;
 };

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+
+import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 
@@ -25,11 +28,37 @@ const SignUp = () => {
     setUserCredentials({ ...userCredentials, [name]: value });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert('Las contraseñas no coinciden');
+      return;
+    }
+
+    try {
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      await createUserProfileDocument(user, { displayName });
+      // Limpiar formulario
+      setUserCredentials({
+        displayName: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Container>
       <SignUpTitle>No tengo una cuenta</SignUpTitle>
       <SignUpSubtitle>Registrate con tu correo y contraseña.</SignUpSubtitle>
-      <FormContainer>
+      <FormContainer onSubmit={handleSubmit}>
         <FormInput
           name='displayName'
           type='text'
@@ -63,7 +92,9 @@ const SignUp = () => {
           required
         />
         <ButtonsContainer>
-          <CustomButton primary>Crear cuenta</CustomButton>
+          <CustomButton type='submit' primary>
+            Crear cuenta
+          </CustomButton>
         </ButtonsContainer>
       </FormContainer>
     </Container>

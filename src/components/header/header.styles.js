@@ -249,6 +249,43 @@ export const SessionBtn = styled(NavLink)`
   }
 `;
 
+export const CloseSessionBtn = styled.button`
+  font-family: ${tokens.fontPrimary};
+  text-decoration: none;
+  color: #fff;
+  background: var(--color-primary);
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-weight: 400;
+  border: none;
+
+  padding: 0.8rem 2rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-primary-light);
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: 1.8rem;
+    margin-left: 1.2rem;
+    width: 100%;
+    padding: 0.8rem 2rem;
+    color: #fff;
+    background: ${({ scrollnav }) =>
+      scrollnav ? '#000' : 'var(--color-primary-light)'};
+    &:hover {
+      background-color: ${({ scrollnav }) =>
+        scrollnav ? 'var(--color-primary)' : '#fff'};
+      color: ${({ scrollnav }) =>
+        scrollnav ? '#fff' : 'var(--color-primary-light)'};
+      transition: all 0.2s ease-in-out;
+    }
+  }
+`;
+
 export const NavLogoLink = styled(Link)`
   @media screen and (max-width: 992px) {
     display: none;
