@@ -31,12 +31,14 @@ const googleSignInStyles = css`
   color: white;
   border: 0.2px solid #4285f4;
   padding: 0;
+  max-height: 4.4rem;
 
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: 1px;
+  grid-template-rows: 1fr;
   align-content: center;
   align-items: center;
+  justify-content: center;
   justify-items: center;
 
   &:hover {
@@ -46,11 +48,12 @@ const googleSignInStyles = css`
     transition: all 0.2s ease-in-out;
   }
 
-  & img {
+  & svg {
     background-color: white;
     border-radius: 50%;
-    padding: 3px;
-    height: 100%;
+    padding: 1px;
+    height: 4rem;
+    width: 4rem;
   }
 `;
 
@@ -83,4 +86,11 @@ export const CustomButtonContainer = styled.button`
 
 export const ChildrenContainer = styled.div`
   margin-left: -2rem;
+`;
+export const GoogleContainer = styled.div`
+  /* width: 100%;
+  height: 100%; */
+  display: grid;
+  justify-content: start;
+  justify-items: center;
 `;

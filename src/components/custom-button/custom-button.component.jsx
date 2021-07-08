@@ -1,16 +1,21 @@
 import React from 'react';
+import { FcGoogle } from 'react-icons/fc';
+
 import {
   CustomButtonContainer,
   ChildrenContainer,
+  GoogleContainer,
 } from './custom-button.styles';
-import googleImg from './google.svg';
 
 const CustomButton = ({ children, isGoogleSignIn, ...props }) => {
   return (
     <CustomButtonContainer isGoogleSignIn={isGoogleSignIn} {...props}>
       {isGoogleSignIn
         ? [
-            <img src={googleImg} alt='Google logo' />,
+            <GoogleContainer>
+              <FcGoogle />
+            </GoogleContainer>,
+
             <ChildrenContainer>{children}</ChildrenContainer>,
           ]
         : children}
