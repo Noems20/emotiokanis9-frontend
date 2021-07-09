@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { setCurrentUser } from './redux/user/user.actions';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { selectCurrentUser } from './redux/user/user.selectors';
 
 import Home from './pages/homepage/homepage.component';
 import Header from './components/header/header.component';
@@ -12,9 +17,6 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import Footer from './components/footer/footer.component';
 import ScrollToTop from './components/scroll-to-top/scroll-to-top';
 import BackToTop from './components/scroll-to-top/back-to-top.component';
-
-import { setCurrentUser } from './redux/user/user.actions';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import './App.scss';
 
@@ -70,8 +72,8 @@ const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
   // currentUser = state.user.currentUser(), -> Ya que destructuramos state, recuerda que state es el root-reducer
 });
 

@@ -15,8 +15,4 @@ export const HeaderItems = [
     title: 'Contacto',
     url: '/contacto',
   },
-  {
-    title: 'Iniciar sesión',
-    url: '/login',
-  },
 ];

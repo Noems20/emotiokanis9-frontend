@@ -1,9 +1,13 @@
 import React from 'react';
-import './waves.css';
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+
+import { auth } from '../../firebase/firebase.utils';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 import { HeaderItems } from './footer.items';
+import { connect } from 'react-redux';
 
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import {
   FooterContainer,
   FooterWrapper,
@@ -11,13 +15,15 @@ import {
   LinksContainer,
   FooterLinks,
   FooterLink,
+  CloseSessionButton,
   SocialLinksContainer,
   FooterSocialLinks,
   FooterSocialLink,
   WebsiteRights,
 } from './footer.styles';
+import './waves.css';
 
-const Footer = () => {
+const Footer = ({ currentUser }) => {
   return (
     <>
       <FooterContainer>
@@ -54,6 +60,17 @@ const Footer = () => {
                 </FooterLinks>
               );
             })}
+            {currentUser ? (
+              <FooterLinks>
+                <CloseSessionButton onClick={() => auth.signOut()}>
+                  Cerrar Sesión
+                </CloseSessionButton>
+              </FooterLinks>
+            ) : (
+              <FooterLinks>
+                <FooterLink to='/login'>Iniciar sesión</FooterLink>
+              </FooterLinks>
+            )}
           </LinksContainer>
           <SocialLinksContainer>
             <FooterSocialLinks>
@@ -93,4 +110,10 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  // const mapStateToProps = (state) => ({
+  // currentUser: selectCurrentUser(state), )}
+});
+
+export default connect(mapStateToProps)(Footer);

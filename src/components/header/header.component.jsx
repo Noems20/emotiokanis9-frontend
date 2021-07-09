@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import { auth } from '../../firebase/firebase.utils';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 import { RiMenu2Line } from 'react-icons/ri';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -89,7 +91,7 @@ const Header = ({ history, currentUser }) => {
         <NavMenu clicked={clicked}>
           {HeaderItems.map((item, index) => {
             return (
-              <NavItem key={index}>
+              <NavItem key={index} onClick={handleClick}>
                 <NavLinks
                   activeClassName='is-active'
                   to={item.url}
@@ -112,6 +114,7 @@ const Header = ({ history, currentUser }) => {
               </CloseSessionBtn>
             ) : (
               <SessionBtn
+                onClick={handleClick}
                 activeClassName='is-active'
                 to='/login'
                 exact
@@ -127,8 +130,10 @@ const Header = ({ history, currentUser }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  // const mapStateToProps = (state) => ({
+  // currentUser: selectCurrentUser(state), )}
 });
 
 export default withRouter(connect(mapStateToProps)(Header));

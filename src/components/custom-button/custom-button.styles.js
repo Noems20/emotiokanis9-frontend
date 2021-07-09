@@ -68,6 +68,7 @@ const getButtonStyles = (props) => {
 export const CustomButtonContainer = styled.button`
   font-family: ${tokens.fontPrimary};
   font-size: 2rem;
+  font-weight: 300;
   text-decoration: none;
   padding: 1rem 2rem;
   border: none;

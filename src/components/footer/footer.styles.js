@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import tokens from '../../tokens';
 
@@ -56,7 +56,7 @@ export const LinksContainer = styled.ul`
 
 export const FooterLinks = styled.li``;
 
-export const FooterLink = styled(Link)`
+const FooterLinksStyles = css`
   display: inline-block;
   font-family: ${tokens.fontPrimary};
   font-size: 2rem;
@@ -82,6 +82,16 @@ export const FooterLink = styled(Link)`
   @media screen and (max-width: 992px) {
     margin-bottom: 0.5rem;
   }
+`;
+
+export const FooterLink = styled(Link)`
+  ${FooterLinksStyles}
+`;
+export const CloseSessionButton = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  ${FooterLinksStyles}
 `;
 
 export const SocialLinksContainer = styled.ul`

@@ -24,6 +24,7 @@ export const ServiceHeading = styled.div`
 export const ServiceTitle = styled.h1`
   font-family: ${tokens.fontPrimary};
   font-size: 8rem;
+  font-weight: 300;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
@@ -66,6 +67,7 @@ export const ServiceDescription = styled.div`
 `;
 export const DescriptionTitle = styled.h1`
   font-family: ${tokens.fontPrimary};
+  font-weight: 300;
   font-size: 3rem;
   color: var(--color-primary);
 `;
@@ -93,6 +95,7 @@ export const ServicePrice = styled.div`
 export const PriceTitle = styled.h1`
   font-family: ${tokens.fontPrimary};
   font-size: 3rem;
+  font-weight: 300;
   color: var(--color-primary);
 `;
 export const Price = styled.p`

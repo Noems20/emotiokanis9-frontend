@@ -54,7 +54,7 @@ html {
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-primary-dark);
+    background: var(--color-primary-light);
   }
 
   input:-webkit-autofill,
@@ -92,9 +92,9 @@ html {
     font-size: 6.4px; /* 6.4px - 40%*/
   }
 
-  @media only screen and (max-width: 326px) {
-    font-size: 5.92px; /* 5.92px - 37%*/
-  }
+  // @media only screen and (max-width: 326px) {
+  //   font-size: 5.92px; /* 5.92px - 37%*/
+  // }
 }
 
 body {
