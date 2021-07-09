@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Home from './pages/homepage/homepage.component';
 import Header from './components/header/header.component';
@@ -10,13 +11,13 @@ import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up
 import Footer from './components/footer/footer.component';
 import ScrollToTop from './components/scroll-to-top/scroll-to-top';
 import BackToTop from './components/scroll-to-top/back-to-top.component';
+
+import { setCurrentUser } from './redux/user/user.actions';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import './App.scss';
 
-function App() {
-  const [currentUser, setCurrentUser] = useState(null);
-
+function App({ setCurrentUser }) {
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
@@ -36,12 +37,12 @@ function App() {
     return () => {
       unsubscribeFromAuth();
     };
-  }, []);
+  }, [setCurrentUser]);
 
   // console.log(currentUser);
   return (
     <>
-      <Header currentUser={currentUser} />
+      <Header />
       <ScrollToTop />
       <BackToTop />
       <Switch>
@@ -57,4 +58,8 @@ function App() {
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(null, mapDispatchToProps)(App);

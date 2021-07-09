@@ -12,11 +12,10 @@ const CustomButton = ({ children, isGoogleSignIn, ...props }) => {
     <CustomButtonContainer isGoogleSignIn={isGoogleSignIn} {...props}>
       {isGoogleSignIn
         ? [
-            <GoogleContainer>
+            <GoogleContainer key={1}>
               <FcGoogle />
             </GoogleContainer>,
-
-            <ChildrenContainer>{children}</ChildrenContainer>,
+            <ChildrenContainer key={2}>{children}</ChildrenContainer>,
           ]
         : children}
     </CustomButtonContainer>

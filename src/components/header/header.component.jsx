@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import { auth } from '../../firebase/firebase.utils';
 
@@ -126,4 +127,8 @@ const Header = ({ history, currentUser }) => {
   );
 };
 
-export default withRouter(Header);
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default withRouter(connect(mapStateToProps)(Header));

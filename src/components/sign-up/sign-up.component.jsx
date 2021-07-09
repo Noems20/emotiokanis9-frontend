@@ -69,7 +69,7 @@ const SignUp = () => {
         />
         <FormInput
           name='email'
-          type='text'
+          type='email'
           handleChange={handleChange}
           value={email}
           label='Email'
