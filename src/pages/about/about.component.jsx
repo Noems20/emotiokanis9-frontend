@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
+import { selectCurrentAwards } from '../../redux/awards/awards.selectors';
+
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 import logo from './images/logo.svg';
-import { images } from './gallery-data';
 
 import GalleryCard from '../../components/gallery-card/gallery-card.component';
 import Modal from '../../components/modal/modal.component';
@@ -20,7 +24,7 @@ import {
   Gallery,
 } from './about.styles';
 
-const About = () => {
+const About = ({ awards }) => {
   const [selectedImg, setSelectedImg] = useState(null);
 
   useEffect(() => {
@@ -81,7 +85,7 @@ const About = () => {
             className='my-masonry-grid'
             columnClassName='my-masonry-grid_column'
           >
-            {images.map(({ id, ...otherCardProps }) => (
+            {awards.map(({ id, ...otherCardProps }) => (
               <GalleryCard
                 key={id}
                 setSelectedImg={setSelectedImg}
@@ -98,4 +102,8 @@ const About = () => {
   );
 };
 
-export default About;
+const mapStateToProps = createStructuredSelector({
+  awards: selectCurrentAwards,
+});
+
+export default connect(mapStateToProps)(About);

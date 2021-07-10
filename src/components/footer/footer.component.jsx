@@ -61,11 +61,16 @@ const Footer = ({ currentUser }) => {
               );
             })}
             {currentUser ? (
-              <FooterLinks>
-                <CloseSessionButton onClick={() => auth.signOut()}>
-                  Cerrar Sesión
-                </CloseSessionButton>
-              </FooterLinks>
+              [
+                <FooterLinks key={5}>
+                  <FooterLink to='/citas'>Citas</FooterLink>
+                </FooterLinks>,
+                <FooterLinks key={6}>
+                  <CloseSessionButton onClick={() => auth.signOut()}>
+                    Cerrar Sesión
+                  </CloseSessionButton>
+                </FooterLinks>,
+              ]
             ) : (
               <FooterLinks>
                 <FooterLink to='/login'>Iniciar sesión</FooterLink>

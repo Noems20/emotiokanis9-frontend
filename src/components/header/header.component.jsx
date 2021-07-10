@@ -103,16 +103,31 @@ const Header = ({ history, currentUser }) => {
               </NavItem>
             );
           })}
-          <NavItem>
-            {/* Boton para iniciar sesión o cerrar dependiendo de usuario */}
-            {currentUser ? (
-              <CloseSessionBtn
-                onClick={() => auth.signOut()}
-                scrollnav={scrollNav ? 1 : 0}
-              >
-                Cerrar sesión
-              </CloseSessionBtn>
-            ) : (
+
+          {/* Boton para iniciar sesión o cerrar dependiendo de usuario */}
+          {currentUser ? (
+            [
+              <NavItem key={5} onClick={handleClick}>
+                <NavLinks
+                  activeClassName='is-active'
+                  to='/citas'
+                  exact
+                  scrollnav={scrollNav ? 1 : 0}
+                >
+                  Citas
+                </NavLinks>
+              </NavItem>,
+              <NavItem key={6}>
+                <CloseSessionBtn
+                  onClick={() => auth.signOut()}
+                  scrollnav={scrollNav ? 1 : 0}
+                >
+                  Cerrar sesión
+                </CloseSessionBtn>
+              </NavItem>,
+            ]
+          ) : (
+            <NavItem>
               <SessionBtn
                 onClick={handleClick}
                 activeClassName='is-active'
@@ -122,8 +137,8 @@ const Header = ({ history, currentUser }) => {
               >
                 Iniciar sesión
               </SessionBtn>
-            )}
-          </NavItem>
+            </NavItem>
+          )}
         </NavMenu>
       </NavContainer>
     </Nav>

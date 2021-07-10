@@ -12,7 +12,9 @@ import Header from './components/header/header.component';
 import Services from './pages/services/services.component';
 import About from './pages/about/about.component';
 import Contact from './pages/contact/contact.component';
+import Appointments from './pages/appointments/appointments.component';
 import NotFound from './pages/NotFound/not-found.component';
+
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import Footer from './components/footer/footer.component';
 import ScrollToTop from './components/scroll-to-top/scroll-to-top';
@@ -57,8 +59,13 @@ function App({ setCurrentUser, currentUser }) {
           exact
           path='/login'
           render={() =>
-            currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />
+            currentUser ? <Redirect to='/citas' /> : <SignInAndSignUpPage />
           }
+        />
+        <Route
+          exact
+          path='/citas'
+          render={() => (currentUser ? <Appointments /> : <Redirect to='/' />)}
         />
         <Route path='/' component={NotFound} />
       </Switch>
