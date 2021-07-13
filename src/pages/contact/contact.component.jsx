@@ -1,17 +1,86 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Grid, Heading, Title, MapContainer, MapTitle } from './contact.styles';
+import {
+  Grid,
+  Heading,
+  Title,
+  MapContainer,
+  MapTitle,
+  Button,
+} from './contact.styles';
 import ContactSection from '../../components/contact-section/contact-section.component';
+import FormInput from '../../components/form-input/form-input.component';
+import TextAreaInput from '../../components/text-area-input/text-area-input.component';
 // import GoogleMap from '../../components/map/map.component';
 
 const Contact = () => {
+  const [userCredentials, setUserCredentials] = useState({
+    displayName: '',
+    lastname: '',
+    email: '',
+    message: '',
+  });
+  const { displayName, lastname, email, message } = userCredentials;
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setUserCredentials({
+      displayName: '',
+      lastname: '',
+      email: '',
+      message: '',
+    });
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setUserCredentials({ ...userCredentials, [name]: value });
+  };
   return (
     <>
       <Grid>
         <Heading>
           <Title>¿Tienes dudas?</Title>
         </Heading>
-        <ContactSection />
+        <ContactSection>
+          <FormInput
+            name='displayName'
+            type='text'
+            handleChange={handleChange}
+            value={displayName}
+            label='Nombre'
+            required
+          />
+          <FormInput
+            name='lastname'
+            type='text'
+            handleChange={handleChange}
+            value={lastname}
+            label='Apellidos'
+            required
+          />
+          <FormInput
+            name='email'
+            type='email'
+            handleChange={handleChange}
+            value={email}
+            label='Email'
+            required
+          />
+          <TextAreaInput
+            name='message'
+            type='text'
+            handleChange={handleChange}
+            value={message}
+            label='Mensaje'
+            rows='1'
+            required
+          />
+          <Button primary type='submit' onClick={handleSubmit}>
+            Enviar
+          </Button>
+        </ContactSection>
         {/* <GoogleMap /> */}
         <MapContainer>
           <MapTitle>Ubícanos</MapTitle>

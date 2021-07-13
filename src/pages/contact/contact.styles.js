@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import CustomButton from '../../components/custom-button/custom-button.component';
 import tokens from '../../tokens';
 import img from './images/img1.jpg';
 
@@ -119,4 +120,8 @@ export const MapTitle = styled.h1`
     display: block;
     background-color: currentColor;
   }
+`;
+
+export const Button = styled(CustomButton)`
+  justify-self: start;
 `;

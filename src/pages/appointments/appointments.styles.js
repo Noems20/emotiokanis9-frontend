@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ContactSection from '../../components/contact-section/contact-section.component';
+import CustomButton from '../../components/custom-button/custom-button.component';
 
 export const Grid = styled.div`
   display: grid;
@@ -108,4 +108,6 @@ export const SidebarText = styled.p`
   }
 `;
 
-export const Contact = styled(ContactSection)``;
+export const Button = styled(CustomButton)`
+  justify-self: start;
+`;

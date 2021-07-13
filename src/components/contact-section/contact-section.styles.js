@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import zac from './images/zac.jpg';
-import CustomButton from '../custom-button/custom-button.component';
+import { motion } from 'framer-motion';
 
-export const ContactContainer = styled.div`
+export const ContactContainer = styled(motion.div)`
   grid-column: center-start / center-end;
   border-radius: 5px;
   margin: 4rem 0;
@@ -143,8 +143,4 @@ export const ContactForm = styled.form`
   @media only screen and (max-width: 748px) {
     grid-gap: 4rem;
   }
-`;
-
-export const Button = styled(CustomButton)`
-  justify-self: start;
 `;
