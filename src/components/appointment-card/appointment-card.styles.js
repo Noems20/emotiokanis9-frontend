@@ -100,6 +100,7 @@ export const EditIcon = styled(AiOutlineEdit)`
 `;
 
 export const FinishedText = styled.h2`
+  /* text-transform: uppercase; */
   color: rgb(216, 20, 20);
 `;
 

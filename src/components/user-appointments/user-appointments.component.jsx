@@ -71,10 +71,10 @@ const UserAppointments = () => {
   return (
     <>
       <Container
-        variants={containerVariants}
-        initial='hidden'
-        animate='visible'
-        exit='exit'
+      // variants={containerVariants}
+      // initial='hidden'
+      // animate='visible'
+      // exit='exit'
       >
         <AppointmentsContainer variants={childVariants}>
           <Title variants={titleVariants}>Cita activa</Title>
