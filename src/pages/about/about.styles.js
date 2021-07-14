@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import tokens from '../../tokens';
+import { motion } from 'framer-motion';
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
   overflow-x: hidden;
   display: grid;
   grid-template-rows:

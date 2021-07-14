@@ -1,9 +1,10 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import CustomButton from '../../components/custom-button/custom-button.component';
 import tokens from '../../tokens';
 import img from './images/img1.jpg';
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
   display: grid;
 
   grid-template-columns:

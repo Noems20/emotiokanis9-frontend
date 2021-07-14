@@ -1,12 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { connect } from 'react-redux';
+
+import { setModalType } from '../../redux/modal/modal.actions';
 
 import './modal.styles.scss';
 
-const Modal = ({ selectedImg, setSelectedImg, children }) => {
+const Modal = ({ children, setModalType }) => {
   const handleClick = (e) => {
     if (e.target.classList.contains('backdrop')) {
-      setSelectedImg(null);
+      setModalType(null);
     }
   };
 
@@ -28,4 +31,8 @@ const Modal = ({ selectedImg, setSelectedImg, children }) => {
   );
 };
 
-export default Modal;
+const mapDispatchToProps = (dispatch) => ({
+  setModalType: (modal) => dispatch(setModalType(modal)),
+});
+
+export default connect(null, mapDispatchToProps)(Modal);

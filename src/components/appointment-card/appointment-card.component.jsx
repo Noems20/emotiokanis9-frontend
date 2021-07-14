@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setModalType } from '../../redux/modal/modal.actions';
 
 import {
   Container,
@@ -14,10 +16,10 @@ import {
   CardBodyDescription,
 } from './appointment-card.styles';
 
-const AppointmentCard = ({ key, variants, active }) => {
+const AppointmentCard = ({ setModalType, variants, active }) => {
   return (
     <>
-      <Container key={key} variants={variants}>
+      <Container variants={variants}>
         <CardHeading>
           <CardHeadingTitle>Soy el titulo</CardHeadingTitle>
           <CardHeadingDate>
@@ -27,7 +29,10 @@ const AppointmentCard = ({ key, variants, active }) => {
           </CardHeadingDate>
           <CardIcons>
             {active ? (
-              [<EditIcon key={1} />, <CloseIcon key={2} />]
+              [
+                <EditIcon key={1} onClick={() => setModalType('edit')} />,
+                <CloseIcon key={2} onClick={() => setModalType('delete')} />,
+              ]
             ) : (
               <FinishedText key={3}>Finalizada</FinishedText>
             )}
@@ -47,4 +52,8 @@ const AppointmentCard = ({ key, variants, active }) => {
   );
 };
 
-export default AppointmentCard;
+const mapDispatchToProps = (dispatch) => ({
+  setModalType: (modal) => dispatch(setModalType(modal)),
+});
+
+export default connect(null, mapDispatchToProps)(AppointmentCard);

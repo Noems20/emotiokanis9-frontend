@@ -37,9 +37,30 @@ const Contact = () => {
 
     setUserCredentials({ ...userCredentials, [name]: value });
   };
+
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+
   return (
     <>
-      <Grid>
+      <Grid
+        variants={containerVariants}
+        initial='hidden'
+        animate='visible'
+        exit='exit'
+      >
         <Heading>
           <Title>¿Tienes dudas?</Title>
         </Heading>

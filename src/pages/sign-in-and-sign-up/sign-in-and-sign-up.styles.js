@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start] repeat(

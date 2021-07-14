@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { selectModalType } from '../../redux/modal/modal.selectors';
 import { AnimatePresence } from 'framer-motion';
 
 import ContactSection from '../../components/contact-section/contact-section.component';
 import FormInput from '../../components/form-input/form-input.component';
 import TextAreaInput from '../../components/text-area-input/text-area-input.component';
 import UserAppointments from '../../components/user-appointments/user-appointments.component';
+import Modal from '../../components/modal/modal.component';
 
 import {
   Grid,
@@ -13,19 +16,20 @@ import {
   SidebarItem,
   SidebarText,
   Button,
+  EditForm,
 } from './appointments.styles';
 
 import { BsFillCalendarFill, BsPeopleCircle } from 'react-icons/bs';
 import { MdContactPhone } from 'react-icons/md';
+import { createStructuredSelector } from 'reselect';
 
-const Appointments = () => {
+const Appointments = ({ modalType }) => {
   const [contactInfo, setContactInfo] = useState({
     subject: '',
     message: '',
   });
 
   const [tab, setTab] = useState();
-
   const { subject, message } = contactInfo;
 
   const renderSwitch = (tab) => {
@@ -87,9 +91,29 @@ const Appointments = () => {
     setContactInfo({ ...contactInfo, [name]: value });
   };
 
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      // transition: {
+      //   delay: 0.5,
+      // },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+
   return (
     <>
-      <Grid>
+      <Grid
+        variants={containerVariants}
+        initial='hidden'
+        animate='visible'
+        exit='exit'
+      >
         <Sidebar>
           <SidebarContainer>
             <SidebarItem onClick={() => setTab('myAppointments')}>
@@ -109,8 +133,27 @@ const Appointments = () => {
 
         <AnimatePresence exitBeforeEnter>{renderSwitch(tab)}</AnimatePresence>
       </Grid>
+
+      {modalType === 'edit' && (
+        <Modal>
+          <EditForm initial={{ y: '-100vh' }} animate={{ y: 0 }}>
+            Edit
+          </EditForm>
+        </Modal>
+      )}
+      {modalType === 'delete' && (
+        <Modal>
+          <EditForm initial={{ y: '-100vh' }} animate={{ y: 0 }}>
+            Cerrar
+          </EditForm>
+        </Modal>
+      )}
     </>
   );
 };
 
-export default Appointments;
+const mapStateToProps = createStructuredSelector({
+  modalType: selectModalType,
+});
+
+export default connect(mapStateToProps)(Appointments);

@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import CustomButton from '../../components/custom-button/custom-button.component';
 
-export const Grid = styled.div`
+export const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns:
     [sidebar-start] 25rem [sidebar-end full-start] minmax(6rem, 1fr)
@@ -119,4 +120,8 @@ export const SidebarText = styled.p`
 
 export const Button = styled(CustomButton)`
   justify-self: start;
+`;
+
+export const EditForm = styled.div`
+  background-color: red;
 `;

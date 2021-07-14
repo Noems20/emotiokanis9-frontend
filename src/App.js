@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { selectCurrentUser } from './redux/user/user.selectors';
+import { setModalType } from './redux/modal/modal.actions';
 
 import Home from './pages/homepage/homepage.component';
 import Header from './components/header/header.component';
@@ -21,8 +22,10 @@ import ScrollToTop from './components/scroll-to-top/scroll-to-top';
 import BackToTop from './components/scroll-to-top/back-to-top.component';
 
 import './App.scss';
+import { AnimatePresence } from 'framer-motion';
 
-function App({ setCurrentUser, currentUser }) {
+function App({ setCurrentUser, currentUser, setModalType }) {
+  const location = useLocation();
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
@@ -50,26 +53,32 @@ function App({ setCurrentUser, currentUser }) {
       <Header />
       <ScrollToTop />
       <BackToTop />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/servicios' component={Services} />
-        <Route exact path='/nosotros' component={About} />
-        <Route exact path='/contacto' component={Contact} />
-        <Route
-          exact
-          path='/login'
-          render={() =>
-            currentUser ? <Redirect to='/citas' /> : <SignInAndSignUpPage />
-          }
-        />
-        <Route
-          exact
-          path='/citas'
-          render={() => (currentUser ? <Appointments /> : <Redirect to='/' />)}
-        />
-        <Route path='/' component={NotFound} />
-      </Switch>
-
+      <AnimatePresence
+        exitBeforeEnter
+        onExitComplete={() => setModalType(null)}
+      >
+        <Switch location={location} key={location.key}>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/servicios' component={Services} />
+          <Route exact path='/nosotros' component={About} />
+          <Route exact path='/contacto' component={Contact} />
+          <Route
+            exact
+            path='/login'
+            render={() =>
+              currentUser ? <Redirect to='/citas' /> : <SignInAndSignUpPage />
+            }
+          />
+          <Route
+            exact
+            path='/citas'
+            render={() =>
+              currentUser ? <Appointments /> : <Redirect to='/' />
+            }
+          />
+          <Route path='/' component={NotFound} />
+        </Switch>
+      </AnimatePresence>
       <Footer />
     </>
   );
@@ -77,6 +86,7 @@ function App({ setCurrentUser, currentUser }) {
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+  setModalType: (modal) => dispatch(setModalType(modal)),
 });
 
 const mapStateToProps = createStructuredSelector({

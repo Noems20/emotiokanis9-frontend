@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { motion } from 'framer-motion';
 
 import { selectCurrentAwards } from '../../redux/awards/awards.selectors';
+import { selectModalType } from '../../redux/modal/modal.selectors';
 
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -25,7 +26,7 @@ import {
   Gallery,
 } from './about.styles';
 
-const About = ({ awards }) => {
+const About = ({ awards, modalType }) => {
   const [selectedImg, setSelectedImg] = useState(null);
 
   useEffect(() => {
@@ -38,9 +39,29 @@ const About = ({ awards }) => {
     700: 1,
   };
 
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+      },
+    },
+    exit: {
+      opacity: 0,
+    },
+  };
+
   return (
     <>
-      <Grid>
+      <Grid
+        variants={containerVariants}
+        initial='hidden'
+        animate='visible'
+        exit='exit'
+      >
         <SectionHeading>
           <SectionTitle>
             LA HISTORIA
@@ -96,14 +117,14 @@ const About = ({ awards }) => {
           </Masonry>
         </Gallery>
       </Grid>
-      {selectedImg && (
-        <Modal setSelectedImg={setSelectedImg}>
+      {modalType && (
+        <Modal>
           <motion.img
             src={selectedImg}
             alt='Imagen agrandada'
             initial={{ y: '-100vh' }}
             animate={{ y: 0 }}
-          />{' '}
+          />
         </Modal>
       )}
     </>
@@ -112,6 +133,7 @@ const About = ({ awards }) => {
 
 const mapStateToProps = createStructuredSelector({
   awards: selectCurrentAwards,
+  modalType: selectModalType,
 });
 
 export default connect(mapStateToProps)(About);
