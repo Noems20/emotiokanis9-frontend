@@ -8,6 +8,7 @@ import {
   CardIcons,
   CloseIcon,
   EditIcon,
+  FinishedText,
   CardBody,
   CardBodyTitle,
   CardBodyDescription,
@@ -23,8 +24,11 @@ const AppointmentCard = ({ key, variants, active }) => {
             Dia: 11/02/2000 <br /> Hora: 7:00pm
           </CardHeadingDate>
           <CardIcons>
-            {active && <EditIcon />}
-            <CloseIcon />
+            {active ? (
+              [<EditIcon />, <CloseIcon />]
+            ) : (
+              <FinishedText>Finalizada</FinishedText>
+            )}
           </CardIcons>
         </CardHeading>
         <CardBody>

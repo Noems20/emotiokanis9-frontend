@@ -5,7 +5,7 @@ import { AiOutlineClose, AiOutlineEdit } from 'react-icons/ai';
 import styled from 'styled-components';
 
 export const Container = styled(motion.div)`
-  margin: 2rem 0;
+  margin: 2rem 1rem;
   border-radius: 10px;
 
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
@@ -13,7 +13,7 @@ export const Container = styled(motion.div)`
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.3fr 0.7fr;
+  grid-template-rows: max-content max-content;
   justify-content: center;
 `;
 
@@ -26,12 +26,19 @@ export const CardHeading = styled.div`
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
+
+  /* @media only screen and (max-width: 840px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: max-content max-content;
+  } */
 `;
 export const CardHeadingTitle = styled.h1`
   font-family: ${tokens.fontPrimary};
   font-weight: 300;
   text-transform: uppercase;
   color: var(--color-primary);
+
+  margin-right: 3rem;
 
   justify-self: start;
 `;
@@ -45,6 +52,10 @@ export const CardHeadingDate = styled.h2`
   padding: 0.5rem;
   border-radius: 10px;
   background-color: var(--color-primary);
+
+  /* @media only screen and (max-width: 400px) {
+    font-family: ${tokens.fontDisplay};
+  } */
 `;
 
 export const CardIcons = styled.div`
@@ -53,36 +64,38 @@ export const CardIcons = styled.div`
 `;
 
 export const CloseIcon = styled(AiOutlineClose)`
-  font-size: 5rem;
-  fill: red;
+  transform: scale(1.2);
+  fill: rgb(216, 20, 20);
   border-radius: 100%;
-
+  padding: 2px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
     fill: #fff;
-    padding: 1px;
-    background-color: red;
-
+    background-color: rgb(216, 20, 20);
     transition: all 0.3s ease-in-out;
   }
 `;
 
 export const EditIcon = styled(AiOutlineEdit)`
-  font-size: 5rem;
+  transform: scale(1.2);
   fill: var(--color-primary);
   border-radius: 100%;
-  margin-right: 1rem;
+  padding: 2px;
+  margin-right: 1.2rem;
 
   transition: all 0.3s ease-in-out;
 
   &:hover {
     fill: #fff;
-    padding: 3px;
     background-color: var(--color-primary-light);
 
     transition: all 0.3s ease-in-out;
   }
+`;
+
+export const FinishedText = styled.h2`
+  color: rgb(216, 20, 20);
 `;
 
 export const CardBody = styled.div`
@@ -90,7 +103,7 @@ export const CardBody = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: max-content max-content;
   align-items: center;
 `;
 

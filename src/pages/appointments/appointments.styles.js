@@ -42,6 +42,7 @@ export const Sidebar = styled.div`
   @media only screen and (max-width: 1200px) {
     grid-column: full-start / full-end;
   }
+  z-index: 10;
 `;
 
 export const SidebarContainer = styled.div`

@@ -40,9 +40,9 @@ const Appointments = () => {
         return (
           <ContactSection
             key={3}
-            initial={{ y: '-100vh' }}
-            animate={{ y: 0 }}
-            exit={{ y: '100vh' }}
+            initial={{ x: '-100vw' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100vw' }}
             transition={{ transition: { ease: 'easeInOut' } }}
           >
             <FormInput

@@ -10,17 +10,17 @@ import {
 const UserAppointments = () => {
   const containerVariants = {
     hidden: {
-      y: '-100vh',
+      x: '-100vw',
     },
     visible: {
-      y: 0,
+      x: 0,
       transition: {
         ease: 'easeInOut',
         when: 'beforeChildren',
       },
     },
     exit: {
-      y: '100vh',
+      x: '100vw',
     },
   };
 
