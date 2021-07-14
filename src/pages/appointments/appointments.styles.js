@@ -10,6 +10,14 @@ export const Grid = styled.div`
 
   grid-template-rows: calc(100vh - 8rem);
 
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+  }
+
   & svg {
     font-size: 2.5rem;
     color: #fff;

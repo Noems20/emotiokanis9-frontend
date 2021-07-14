@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import './modal.styles.scss';
 
-const Modal = ({ selectedImg, setSelectedImg }) => {
+const Modal = ({ selectedImg, setSelectedImg, children }) => {
   const handleClick = (e) => {
     if (e.target.classList.contains('backdrop')) {
       setSelectedImg(null);
@@ -17,12 +17,13 @@ const Modal = ({ selectedImg, setSelectedImg }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <motion.img
+      {/* <motion.img
         src={selectedImg}
         alt='Enlarged pic'
         initial={{ y: '-100vh' }}
         animate={{ y: 0 }}
-      />
+      /> */}
+      {children}
     </motion.div>
   );
 };

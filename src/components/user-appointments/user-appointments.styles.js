@@ -17,16 +17,15 @@ export const Container = styled(motion.div)`
   grid-template-rows: 0.95fr;
 
   @media only screen and (max-width: 1200px) {
-    max-height: 700px;
+    max-height: 780px;
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 600px) {
     grid-column: full-start / full-end;
   }
 `;
 
 export const AppointmentsContainer = styled(motion.div)`
-  /* background: red; */
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll;

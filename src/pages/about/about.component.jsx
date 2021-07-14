@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { motion } from 'framer-motion';
 
 import { selectCurrentAwards } from '../../redux/awards/awards.selectors';
 
@@ -96,7 +97,14 @@ const About = ({ awards }) => {
         </Gallery>
       </Grid>
       {selectedImg && (
-        <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+        <Modal setSelectedImg={setSelectedImg}>
+          <motion.img
+            src={selectedImg}
+            alt='Imagen agrandada'
+            initial={{ y: '-100vh' }}
+            animate={{ y: 0 }}
+          />{' '}
+        </Modal>
       )}
     </>
   );

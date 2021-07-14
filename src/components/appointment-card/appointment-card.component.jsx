@@ -21,13 +21,15 @@ const AppointmentCard = ({ key, variants, active }) => {
         <CardHeading>
           <CardHeadingTitle>Soy el titulo</CardHeadingTitle>
           <CardHeadingDate>
-            Dia: 11/02/2000 <br /> Hora: 7:00pm
+            Dia: 11/02/2000
+            <br />
+            Hora: 7:00pm
           </CardHeadingDate>
           <CardIcons>
             {active ? (
-              [<EditIcon />, <CloseIcon />]
+              [<EditIcon key={1} />, <CloseIcon key={2} />]
             ) : (
-              <FinishedText>Finalizada</FinishedText>
+              <FinishedText key={3}>Finalizada</FinishedText>
             )}
           </CardIcons>
         </CardHeading>

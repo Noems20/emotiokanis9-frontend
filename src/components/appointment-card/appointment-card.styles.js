@@ -43,19 +43,15 @@ export const CardHeadingTitle = styled.h1`
   justify-self: start;
 `;
 export const CardHeadingDate = styled.h2`
-  letter-spacing: 2px;
-  font-family: ${tokens.fontPrimary};
-  font-weight: 300;
+  font-family: ${tokens.fontDisplay};
+  /* font-weight: 300; */
   text-align: center;
+  letter-spacing: 1px;
   color: #fff;
 
   padding: 0.5rem;
   border-radius: 10px;
   background-color: var(--color-primary);
-
-  /* @media only screen and (max-width: 400px) {
-    font-family: ${tokens.fontDisplay};
-  } */
 `;
 
 export const CardIcons = styled.div`
@@ -75,6 +71,10 @@ export const CloseIcon = styled(AiOutlineClose)`
     background-color: rgb(216, 20, 20);
     transition: all 0.3s ease-in-out;
   }
+
+  @media only screen and (max-width: 430px) {
+    transform: scale(1.4);
+  }
 `;
 
 export const EditIcon = styled(AiOutlineEdit)`
@@ -91,6 +91,11 @@ export const EditIcon = styled(AiOutlineEdit)`
     background-color: var(--color-primary-light);
 
     transition: all 0.3s ease-in-out;
+  }
+
+  @media only screen and (max-width: 430px) {
+    /* margin-right: 1.7rem; */
+    transform: scale(1.4);
   }
 `;
 
@@ -117,4 +122,8 @@ export const CardBodyTitle = styled.h1`
 `;
 export const CardBodyDescription = styled.p`
   font-size: 1.6rem;
+
+  @media only screen and (max-width: 430px) {
+    font-size: 2rem;
+  }
 `;
