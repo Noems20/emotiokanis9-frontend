@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import ContactSection from '../../components/contact-section/contact-section.component';
 import FormInput from '../../components/form-input/form-input.component';
 import TextAreaInput from '../../components/text-area-input/text-area-input.component';
+import UserAppointments from '../../components/user-appointments/user-appointments.component';
 
 import {
   Grid,
@@ -30,7 +31,7 @@ const Appointments = () => {
   const renderSwitch = (tab) => {
     switch (tab) {
       case 'myAppointments':
-        return <p key={1}>Mis Citas</p>;
+        return <UserAppointments key={1} />;
 
       case 'makeAppointment':
         return <p key={2}>Hacer cita</p>;
@@ -42,6 +43,7 @@ const Appointments = () => {
             initial={{ y: '-100vh' }}
             animate={{ y: 0 }}
             exit={{ y: '100vh' }}
+            transition={{ transition: { ease: 'easeInOut' } }}
           >
             <FormInput
               name='subject'
@@ -66,7 +68,7 @@ const Appointments = () => {
           </ContactSection>
         );
       default:
-        return <p>Mis Citas</p>;
+        return <UserAppointments key={1} />;
     }
   };
 
