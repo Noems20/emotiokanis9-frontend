@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 export const Container = styled(motion.div)`
   margin: 2rem 1rem;
+  padding: 2rem;
   border-radius: 10px;
 
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
@@ -18,7 +19,7 @@ export const Container = styled(motion.div)`
 `;
 
 export const CardHeading = styled.div`
-  margin: 2rem 2rem 0 2rem;
+  /* margin: 2rem 2rem 0 2rem; */
   padding-bottom: 2rem;
   border-bottom: 3px solid var(--color-primary);
 
@@ -26,11 +27,6 @@ export const CardHeading = styled.div`
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   align-items: center;
-
-  /* @media only screen and (max-width: 840px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: max-content max-content;
-  } */
 `;
 export const CardHeadingTitle = styled.h1`
   font-family: ${tokens.fontPrimary};
@@ -57,18 +53,20 @@ export const CardHeadingDate = styled.h2`
 export const CardIcons = styled.div`
   justify-self: end;
   cursor: pointer;
+
+  grid-column: 3 / 4;
 `;
 
 export const CloseIcon = styled(AiOutlineClose)`
   transform: scale(1.2);
-  fill: rgb(216, 20, 20);
+  fill: #f94415;
   border-radius: 100%;
   padding: 2px;
   transition: all 0.3s ease-in-out;
 
   &:hover {
     fill: #fff;
-    background-color: rgb(216, 20, 20);
+    background-color: #f94415;
     transition: all 0.3s ease-in-out;
   }
 
@@ -101,11 +99,11 @@ export const EditIcon = styled(AiOutlineEdit)`
 
 export const FinishedText = styled.h2`
   /* text-transform: uppercase; */
-  color: rgb(216, 20, 20);
+  color: #f94415;
 `;
 
 export const CardBody = styled.div`
-  margin: 2rem;
+  margin-top: 2rem;
 
   display: grid;
   grid-template-columns: 1fr;

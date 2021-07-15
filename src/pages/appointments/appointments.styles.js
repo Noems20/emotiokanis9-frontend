@@ -121,7 +121,3 @@ export const SidebarText = styled.p`
 export const Button = styled(CustomButton)`
   justify-self: start;
 `;
-
-export const EditForm = styled.div`
-  background-color: red;
-`;

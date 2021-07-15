@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 import tokens from '../../tokens';
 import { motion } from 'framer-motion';
 
+import { RiCloseLine } from 'react-icons/ri';
+
 const errorColor = '#f94415';
 const successColor = '#41d888';
 
@@ -47,6 +49,8 @@ export const Container = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
   grid-template-rows: 1fr 1fr 0.2fr;
+
+  position: relative;
 
   ${getBackgroundColor}
 `;
@@ -114,4 +118,14 @@ export const Decoration = styled.div`
   /* margin-top: 2rem; */
   border-radius: 0 0 0 10px;
   background-color: rgba(255, 255, 255, 0.5);
+`;
+
+export const CloseIcon = styled(RiCloseLine)`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+
+  fill: #fff;
+  transform: scale(2.5);
 `;

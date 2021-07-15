@@ -16,7 +16,6 @@ import {
   SidebarItem,
   SidebarText,
   Button,
-  EditForm,
 } from './appointments.styles';
 
 import { BsFillCalendarFill, BsPeopleCircle } from 'react-icons/bs';
@@ -135,8 +134,8 @@ const Appointments = ({ modalType }) => {
       {modalType === 'edit' && (
         <Modal>
           <Alert
-            title='¡Error!'
-            text='¿Estas seguro de que deseas cancelar tu cita?'
+            title='¡Exito!'
+            text='Tu cuenta ha sido creada correctamente'
             button='Continuar'
             type='success'
           />
@@ -145,9 +144,9 @@ const Appointments = ({ modalType }) => {
       {modalType === 'delete' && (
         <Modal>
           <Alert
-            title='¡Error!'
+            title='¡Cuidado!'
             text='¿Estas seguro de que deseas cancelar tu cita?'
-            button='Continuar'
+            button='Cancelar cita'
             type='error'
           />
         </Modal>
