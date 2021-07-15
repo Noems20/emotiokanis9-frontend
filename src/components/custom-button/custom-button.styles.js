@@ -89,8 +89,6 @@ export const ChildrenContainer = styled.div`
   margin-left: -2rem;
 `;
 export const GoogleContainer = styled.div`
-  /* width: 100%;
-  height: 100%; */
   display: grid;
   justify-content: start;
   justify-items: center;

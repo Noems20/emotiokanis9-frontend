@@ -22,6 +22,7 @@ import {
 import { BsFillCalendarFill, BsPeopleCircle } from 'react-icons/bs';
 import { MdContactPhone } from 'react-icons/md';
 import { createStructuredSelector } from 'reselect';
+import Alert from '../../components/alert/alert.component';
 
 const Appointments = ({ modalType }) => {
   const [contactInfo, setContactInfo] = useState({
@@ -97,9 +98,6 @@ const Appointments = ({ modalType }) => {
     },
     visible: {
       opacity: 1,
-      // transition: {
-      //   delay: 0.5,
-      // },
     },
     exit: {
       opacity: 0,
@@ -136,16 +134,22 @@ const Appointments = ({ modalType }) => {
 
       {modalType === 'edit' && (
         <Modal>
-          <EditForm initial={{ y: '-100vh' }} animate={{ y: 0 }}>
-            Edit
-          </EditForm>
+          <Alert
+            title='¡Error!'
+            text='¿Estas seguro de que deseas cancelar tu cita?'
+            button='Continuar'
+            type='success'
+          />
         </Modal>
       )}
       {modalType === 'delete' && (
         <Modal>
-          <EditForm initial={{ y: '-100vh' }} animate={{ y: 0 }}>
-            Cerrar
-          </EditForm>
+          <Alert
+            title='¡Error!'
+            text='¿Estas seguro de que deseas cancelar tu cita?'
+            button='Continuar'
+            type='error'
+          />
         </Modal>
       )}
     </>
