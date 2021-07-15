@@ -98,7 +98,7 @@ export const EditIcon = styled(AiOutlineEdit)`
 `;
 
 export const FinishedText = styled.h2`
-  /* text-transform: uppercase; */
+  justify-self: end;
   color: #f94415;
 `;
 

@@ -78,6 +78,10 @@ export const AlertTitle = styled.h1`
   font-weight: 700;
   color: #fff;
   margin-bottom: 1rem;
+
+  @media only screen and (max-width: 430px) {
+    font-size: 2.5rem;
+  }
 `;
 export const AlertText = styled.p`
   font-family: ${tokens.fontDisplay};
@@ -87,6 +91,10 @@ export const AlertText = styled.p`
 
   margin-right: 4rem;
   margin-bottom: 1.5rem;
+
+  @media only screen and (max-width: 430px) {
+    font-size: 2rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -99,6 +107,7 @@ export const Button = styled.button`
   padding: 6px;
   margin-bottom: 2rem;
   transition: all 0.2s ease-in-out;
+  background-color: #fff;
 
   ${getColor}
   &:hover {
@@ -109,6 +118,10 @@ export const Button = styled.button`
 
   &:active {
     transform: translateY(1px);
+  }
+
+  @media only screen and (max-width: 430px) {
+    font-size: 2rem;
   }
 `;
 
@@ -128,4 +141,8 @@ export const CloseIcon = styled(RiCloseLine)`
 
   fill: #fff;
   transform: scale(2.5);
+
+  @media only screen and (max-width: 430px) {
+    transform: scale(4);
+  }
 `;

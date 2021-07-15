@@ -27,16 +27,15 @@ const AppointmentCard = ({ setModalType, variants, active }) => {
             <br />
             Hora: 7:00pm
           </CardHeadingDate>
-          <CardIcons>
-            {active ? (
-              [
-                <EditIcon key={1} onClick={() => setModalType('edit')} />,
-                <CloseIcon key={2} onClick={() => setModalType('delete')} />,
-              ]
-            ) : (
-              <FinishedText key={3}>Finalizada</FinishedText>
-            )}
-          </CardIcons>
+
+          {active ? (
+            <CardIcons>
+              <EditIcon key={1} onClick={() => setModalType('edit')} />
+              <CloseIcon key={2} onClick={() => setModalType('delete')} />
+            </CardIcons>
+          ) : (
+            <FinishedText key={3}>Finalizada</FinishedText>
+          )}
         </CardHeading>
         <CardBody>
           <CardBodyTitle>Descripción</CardBodyTitle>
