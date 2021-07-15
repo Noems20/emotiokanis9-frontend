@@ -3,11 +3,13 @@ import { connect } from 'react-redux';
 import { selectModalType } from '../../redux/modal/modal.selectors';
 import { AnimatePresence } from 'framer-motion';
 
+import CreateAppointment from '../../components/create-appointment/create-appointment.component';
+import UserAppointments from '../../components/user-appointments/user-appointments.component';
 import ContactSection from '../../components/contact-section/contact-section.component';
 import FormInput from '../../components/form-input/form-input.component';
 import TextAreaInput from '../../components/text-area-input/text-area-input.component';
-import UserAppointments from '../../components/user-appointments/user-appointments.component';
 import Modal from '../../components/modal/modal.component';
+import Alert from '../../components/alert/alert.component';
 
 import {
   Grid,
@@ -21,7 +23,6 @@ import {
 import { BsFillCalendarFill, BsPeopleCircle } from 'react-icons/bs';
 import { MdContactPhone } from 'react-icons/md';
 import { createStructuredSelector } from 'reselect';
-import Alert from '../../components/alert/alert.component';
 
 const Appointments = ({ modalType }) => {
   const [contactInfo, setContactInfo] = useState({
@@ -38,7 +39,7 @@ const Appointments = ({ modalType }) => {
         return <UserAppointments key={1} />;
 
       case 'makeAppointment':
-        return <p key={2}>Hacer cita</p>;
+        return <CreateAppointment key={2} />;
 
       case 'contact':
         return (

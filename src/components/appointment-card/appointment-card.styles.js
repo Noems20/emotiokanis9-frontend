@@ -98,7 +98,8 @@ export const EditIcon = styled(AiOutlineEdit)`
 `;
 
 export const FinishedText = styled.h2`
-  justify-self: end;
+  /* justify-self: end; */
+  margin-left: auto;
   color: #f94415;
 `;
 
