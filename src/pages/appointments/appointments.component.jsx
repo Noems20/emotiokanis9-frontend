@@ -36,7 +36,7 @@ const Appointments = ({ modalType }) => {
   const renderSwitch = (tab) => {
     switch (tab) {
       case 'myAppointments':
-        return <UserAppointments key={1} />;
+        return <UserAppointments setTab={setTab} key={1} />;
 
       case 'makeAppointment':
         return <CreateAppointment key={2} />;

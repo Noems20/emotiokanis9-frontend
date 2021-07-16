@@ -1,13 +1,19 @@
 import React from 'react';
+import { useState } from 'react';
 import AppointmentCard from '../appointment-card/appointment-card.component';
 
 import {
   Container,
   AppointmentsContainer,
   Title,
+  NotAppointments,
+  Button,
 } from './user-appointments.styles';
 
-const UserAppointments = () => {
+const UserAppointments = ({ setTab }) => {
+  const [citas, setCitas] = useState(false);
+  const [citasActiva, setCitasActiva] = useState(false);
+
   const containerVariants = {
     hidden: {
       x: '-100vw',
@@ -79,17 +85,36 @@ const UserAppointments = () => {
         <AppointmentsContainer variants={childVariants}>
           <Title variants={titleVariants}>Cita activa</Title>
 
-          <AppointmentCard active key={1} variants={cardVariants} />
+          {citasActiva ? (
+            <AppointmentCard active key={1} variants={cardVariants} />
+          ) : (
+            [
+              <NotAppointments variants={cardVariants}>
+                No tienes citas
+              </NotAppointments>,
+              <Button primary onClick={() => setTab('makeAppointment')}>
+                Agendar Cita
+              </Button>,
+            ]
+          )}
 
           <Title variants={titleVariants}>Citas anteriores</Title>
-          <AppointmentCard key={2} variants={cardVariants} />
-          <AppointmentCard key={3} variants={cardVariants} />
-          <AppointmentCard key={4} variants={cardVariants} />
-          <AppointmentCard key={5} variants={cardVariants} />
-          <AppointmentCard key={6} variants={cardVariants} />
-          <AppointmentCard key={7} variants={cardVariants} />
-          <AppointmentCard key={8} variants={cardVariants} />
-          <AppointmentCard key={9} variants={cardVariants} />
+          {citas ? (
+            [
+              <AppointmentCard key={2} variants={cardVariants} />,
+              <AppointmentCard key={3} variants={cardVariants} />,
+              <AppointmentCard key={4} variants={cardVariants} />,
+              <AppointmentCard key={5} variants={cardVariants} />,
+              <AppointmentCard key={6} variants={cardVariants} />,
+              <AppointmentCard key={7} variants={cardVariants} />,
+              <AppointmentCard key={8} variants={cardVariants} />,
+              <AppointmentCard key={9} variants={cardVariants} />,
+            ]
+          ) : (
+            <NotAppointments variants={cardVariants}>
+              No tienes citas
+            </NotAppointments>
+          )}
         </AppointmentsContainer>
       </Container>
     </>

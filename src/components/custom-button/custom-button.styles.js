@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 import tokens from '../../tokens';
 
@@ -65,7 +66,7 @@ const getButtonStyles = (props) => {
   return props.primary ? primaryButtonStyles : secondaryButtonStyles;
 };
 
-export const CustomButtonContainer = styled.button`
+export const CustomButtonContainer = styled(motion.button)`
   font-family: ${tokens.fontPrimary};
   font-size: 2rem;
   font-weight: 300;

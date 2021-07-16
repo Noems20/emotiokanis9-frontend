@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import tokens from '../../tokens';
 import { motion } from 'framer-motion';
+import CustomButton from '../custom-button/custom-button.component';
 
 export const Container = styled(motion.div)`
   grid-column: center-start / center-end;
@@ -44,4 +45,17 @@ export const Title = styled(motion.h1)`
   font-weight: 300;
   font-size: 3rem;
   text-align: center;
+`;
+
+export const NotAppointments = styled(motion.h2)`
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 2rem;
+  color: var(--color-primary);
+`;
+
+export const Button = styled(CustomButton)`
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 `;
