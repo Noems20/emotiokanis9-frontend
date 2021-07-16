@@ -30,7 +30,7 @@ const Appointments = ({ modalType }) => {
     message: '',
   });
 
-  const [tab, setTab] = useState();
+  const [tab, setTab] = useState(null);
   const { subject, message } = contactInfo;
 
   const renderSwitch = (tab) => {
@@ -73,7 +73,7 @@ const Appointments = ({ modalType }) => {
           </ContactSection>
         );
       default:
-        return <UserAppointments key={1} />;
+        return <UserAppointments setTab={setTab} key={1} />;
     }
   };
 

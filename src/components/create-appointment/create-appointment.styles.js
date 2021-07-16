@@ -22,7 +22,7 @@ export const Container = styled(motion.div)`
     padding: 3rem;
   }
 
-  @media only screen and (min-height: 800px) {
+  @media only screen and (min-height: 800px) and (max-width: 1280px) {
     margin: 12vh 0px;
   }
 

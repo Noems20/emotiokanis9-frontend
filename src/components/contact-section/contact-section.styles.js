@@ -12,7 +12,7 @@ export const ContactContainer = styled(motion.div)`
   overflow: hidden;
 
   display: grid;
-  grid-template-columns: [info-start] 30% [info-end form-start] 70% [form-end];
+  grid-template-columns: [info-start] min-content [info-end form-start] 1fr [form-end];
   grid-template-rows: 1fr;
 
   @media only screen and (min-width: 1200px) {

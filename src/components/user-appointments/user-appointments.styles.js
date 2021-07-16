@@ -18,7 +18,17 @@ export const Container = styled(motion.div)`
   grid-template-rows: 0.95fr;
 
   @media only screen and (max-width: 1200px) {
-    max-height: 780px;
+    height: 700px;
+  }
+  @media only screen and (max-width: 900px) {
+    height: 472px;
+  }
+  @media only screen and (max-width: 800px) and (min-height: 1050px) {
+    height: 700px;
+  }
+
+  @media only screen and (min-height: 1300px) {
+    margin: 7rem 0px;
   }
 
   @media only screen and (max-width: 600px) {
@@ -45,6 +55,10 @@ export const Title = styled(motion.h1)`
   font-weight: 300;
   font-size: 3rem;
   text-align: center;
+
+  @media only screen and (max-width: 430px) {
+    font-size: 4.5rem;
+  }
 `;
 
 export const NotAppointments = styled(motion.h2)`
@@ -52,10 +66,21 @@ export const NotAppointments = styled(motion.h2)`
   margin: 3rem 0;
   font-size: 2rem;
   color: var(--color-primary);
+
+  @media only screen and (max-width: 430px) {
+    font-size: 3rem;
+  }
 `;
 
 export const Button = styled(CustomButton)`
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
   display: block;
   margin: 0 auto;
   margin-bottom: 2rem;
+
+  @media only screen and (max-width: 430px) {
+    font-size: 2.5rem;
+  }
 `;

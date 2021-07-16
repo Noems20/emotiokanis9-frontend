@@ -92,7 +92,11 @@ const UserAppointments = ({ setTab }) => {
               <NotAppointments variants={cardVariants}>
                 No tienes citas
               </NotAppointments>,
-              <Button primary onClick={() => setTab('makeAppointment')}>
+              <Button
+                primary
+                variants={cardVariants}
+                onClick={() => setTab('makeAppointment')}
+              >
                 Agendar Cita
               </Button>,
             ]
